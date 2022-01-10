@@ -1,1 +1,1 @@
-web: gunicorn jatherapies.wsgi
+web: gunicorn JATherapies.wsgi
