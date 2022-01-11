@@ -6,5 +6,15 @@ def home(request):
 
 
 def contact(request):
-    return render(request, 'contact.html')
+    if request.method == "POST":
+        fname = request.POST['fname']
+        lname = request.POST['lname']
+        email = request.POST['email']
+        subject = request.POST['subject']
+        message = request.POST['message']
+
+        return render(request, 'contact.html', {'fname': fname})
+
+    else:
+        return render(request, 'contact.html')
 
