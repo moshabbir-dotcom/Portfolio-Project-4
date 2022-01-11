@@ -1,0 +1,191 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JA Therapies</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/mainsite/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="/static/mainsite/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/mainsite/css/magnific-popup.css">
+    <link rel="stylesheet" href="/static/mainsite/css/jquery-ui.css">
+    <link rel="stylesheet" href="/static/mainsite/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static/mainsite/css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="/static/mainsite/css/bootstrap-datepicker.css">
+
+    <link rel="stylesheet" href="/static/mainsite/fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="/static/mainsite/css/aos.css">
+    <link rel="stylesheet" href="/static/mainsite/css/rangeslider.css">
+
+    <link rel="stylesheet" href="/static/mainsite/css/style.css">
+    
+  </head>
+  <body>
+  
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+    <header class="site-navbar" role="banner">
+
+      <div class="container">
+        <div class="row align-items-center">
+          
+          <div class="col-11 col-xl-4">
+            <h1 class="mb-0 site-logo"><a href="{% url 'home' as url %}" class="text-white mb-0"> JA Therapies<span class="text-primary">.</span> </a></h1>
+          </div>
+          <div class="col-12 col-md-8 d-none d-xl-block">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+
+              <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li class="active"><a href="{% url 'home' as url %}"><span>Home</span></a></li>
+                <li class="has-children">
+                  <a href="services.html"><span>Services</span></a>
+                  <ul class="dropdown arrow-top">
+                    <li><a href="#">Physical Therapy</a></li>
+                    <li><a href="#">Massage Therapy</a></li>
+                    <li><a href="#">Chiropractic Therapy</a></li>
+                    <li class="has-children">
+                      <a href="#">Dropdown</a>
+                      <ul class="dropdown">
+                        <li><a href="#">Physical Therapy</a></li>
+                        <li><a href="#">Massage Therapy</a></li>
+                        <li><a href="#">Chiropractic Therapy</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="about.html"><span>About</span></a></li>
+                <li><a href="blog.html"><span>Blog</span></a></li>
+                <li><a href="{% url 'contact' as url %}"><span>Contact</span></a></li>
+              </ul>
+            </nav>
+          </div>
+
+
+          <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+
+          </div>
+
+        </div>
+      </div>
+      
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
+                <h2 class="footer-heading mb-4">Quick Links</h2>
+                <ul class="list-unstyled">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">Testimonials</a></li>
+                  <li><a href="{% url 'contact' as url %}">Contact Us</a></li>
+                </ul>
+              </div>
+              <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
+                <h2 class="footer-heading mb-4">Products</h2>
+                <ul class="list-unstyled">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">Testimonials</a></li>
+                  <li><a href="{% url 'contact' as url %}">Contact Us</a></li>
+                </ul>
+              </div>
+              <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
+                <h2 class="footer-heading mb-4">Features</h2>
+                <ul class="list-unstyled">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">Testimonials</a></li>
+                  <li><a href="{% url 'contact' as url %}">Contact Us</a></li>
+                </ul>
+              </div>
+              <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
+                <h2 class="footer-heading mb-4">Follow Us</h2>
+                <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <h2 class="footer-heading mb-4">Subscribe Newsletter</h2>
+            <p>Why not get in touch and keep up to date with the latest news & offers on offers across all our holistic & alternative therapies.</p>
+            <form action="#" method="post" class="subscription">
+              <div class="input-group mb-3  d-flex align-items-stretch">
+                <input type="text" class="form-control bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
+                <button class="btn btn-primary text-white" type="button" id="button-addon2">Send</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="row pt-5 mt-5">
+          <div class="col-12 text-md-center text-left">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/static/mainsite/js/jquery-3.3.1.min.js"></script>
+  <script src="/static/mainsite/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="/static/mainsite/js/jquery-ui.js"></script>
+  <script src="/static/mainsite/js/popper.min.js"></script>
+  <script src="/static/mainsite/js/bootstrap.min.js"></script>
+  <script src="/static/mainsite/js/owl.carousel.min.js"></script>
+  <script src="/static/mainsite/js/jquery.stellar.min.js"></script>
+  <script src="/static/mainsite/js/jquery.countdown.min.js"></script>
+  <script src="/static/mainsite/js/jquery.magnific-popup.min.js"></script>
+  <script src="/static/mainsite/js/jquery.animateNumber.min.js"></script>
+  <script src="/static/mainsite/js/jquery.waypoints.min.js"></script>
+
+  <script src="/static/mainsite/js/bootstrap-datepicker.min.js"></script>
+  <script src="/static/mainsite/js/aos.js"></script>
+  <script src="/static/mainsite/js/rangeslider.min.js"></script>
+  
+
+  <script src="/static/mainsite/js/typed.js"></script>
+            <script>
+            var typed = new Typed('.typed-words', {
+            strings: [" pain"," stress"," fatigue", " lifestyle", " worries"],
+            typeSpeed: 80,
+            backSpeed: 80,
+            backDelay: 4000,
+            startDelay: 1000,
+            loop: true,
+            showCursor: true
+            });
+            </script>
+
+  <script src="/static/mainsite/js/main.js"></script>
+  
+  </body>
+</html>
