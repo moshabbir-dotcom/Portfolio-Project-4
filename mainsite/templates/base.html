@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>{% block title %} JA Therapies {% endblock}</title>
+    <title>{% block title %} JA Therapies {% endblock %}</title>
     <meta charset="utf-8">
     <meta name="description" content="{% block meta_description %}JA Therapies, Massage, Sports Therapy, Aromatherapy, Cupping, Hijama, Twickenham{% endblock %}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -72,7 +72,7 @@
                   </ul>
                 </li>
                 <li><a href="about.html"><span>About</span></a></li>
-                <li><a href="blog.html"><span>Blog</span></a></li>
+                <li><a href="blog.html"><span>Prices</span></a></li>
                 <li><a href="{% url 'contact' as url %}"><span>Contact</span></a></li>
               </ul>
             </nav>
@@ -176,11 +176,11 @@
   <script src="{% static 'mainsite/js/typed.js' %}"></script>
             <script>
             var typed = new Typed('.typed-words', {
-            strings: [" pain"," stress"," fatigue", " lifestyle", " worries"],
-            typeSpeed: 80,
-            backSpeed: 80,
-            backDelay: 4000,
-            startDelay: 1000,
+            strings: [" pain..."," stress..."," fatigue...", " worries...", " health...", " wellbeing...", " lifestyle!"],
+            typeSpeed: 60,
+            backSpeed: 60,
+            backDelay: 2000,
+            startDelay: 750,
             loop: true,
             showCursor: true
             });
