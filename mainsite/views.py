@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.core.mail import send_mail
 
 # Create your views here.
 def home(request):
@@ -12,6 +13,18 @@ def contact(request):
         email = request.POST['email']
         subject = request.POST['subject']
         message = request.POST['message']
+
+        # NEED TO SEND AN EMAIL
+        send_mail(
+            'Message from ' + fname, lname,
+            + ' about '
+            + subject,
+            + ' recieved from'
+            + email,
+            + ' to say: '
+            + message,
+            ['jasleena@jatherapies.com'],
+            )
 
         return render(request, 'contact.html', {'fname': fname})
 
