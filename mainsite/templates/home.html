@@ -59,7 +59,7 @@
                 <span class="icon icon-clock-o mr-3"></span>
                 <div class="text">
                   <strong class="d-block heading">Opening hours</strong>
-                  <span class="excerpt">Mon-Fri 7:AM - 5PM</span>
+                  <span class="excerpt">Mon-Sat 8:AM - 5PM</span>
                 </div>
               </div>
             </div>
@@ -74,30 +74,30 @@
           <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
             <h3 class="mb-3">What We Offer</h3>
             <p>A range of alternative, holistic and sports therapies by a fully certified team of treatment professionals specialising in areas such as Swedish massage, Sports massage, Aromatherapy, Garston Technique and Cupping treatments.</p>
-            <p><a href="#" class="d-inline-flex align-items-center block-service-1-more"><span>See all services</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
+            <p><a href="{% url 'prices' %}" class="d-inline-flex align-items-center block-service-1-more"><span>See all services</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
           </div>
           <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
             <div class="block-service-1-card">
-              <a href="#" class="thumbnail-link d-block mb-4"><img src="{% static 'mainsite/images/img_2.jpg' %}" alt="Image" class="img-fluid"></a>
+              <a href="#" class="thumbnail-link d-block mb-4"><img src="{% static 'mainsite/images/img_2.jpg' %}" alt="Person recieving physical Therapy" class="img-fluid"></a>
               <h3 class="block-service-1-heading mb-3"><a href="{% url 'contact' as url %}">Physical Therapy</a></h3>
               <div class="block-service-1-excerpt"><p>Sports massage and rehabilitation by our in house level 4 personal trainer</p></div>
-              <p><a href="{% url 'contact' as url %}" class="d-inline-flex align-items-center block-service-1-more"><span>Find out more</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
+              <p><a href="{% url 'prices' %}" class="d-inline-flex align-items-center block-service-1-more"><span>Find out more</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
             </div>
           </div>
           <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
             <div class="block-service-1-card">
-              <a href="#" class="thumbnail-link d-block mb-4"><img src="{% static 'mainsite/images/img_1.jpg' %}" alt="Image" class="img-fluid"></a>
-              <h3 class="block-service-1-heading mb-3"><a href="{% url 'contact' as url %}">Massage Therapy</a></h3>
+              <a href="#" class="thumbnail-link d-block mb-4"><img src="{% static 'mainsite/images/img_1.jpg' %}" alt="Person recieving Swedish Massage" class="img-fluid"></a>
+              <h3 class="block-service-1-heading mb-3"><a href="{% url 'contact' %}">Massage Therapy</a></h3>
               <div class="block-service-1-excerpt"><p>Swedish massage using hand blended essential oils formulations to help with circulation, recovery and the stresses of everyday life by our in house pair of treatment specialist.</p></div>
-              <p><a href="{% url 'contact' as url %}" class="d-inline-flex align-items-center block-service-1-more"><span>Find out more</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
+              <p><a href="{% url 'prices' %}" class="d-inline-flex align-items-center block-service-1-more"><span>Find out more</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
             </div>
           </div>
           <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
             <div class="block-service-1-card">
-              <a href="#" class="thumbnail-link d-block mb-4"><img src="{% static 'mainsite/images/img_3.jpg' %}" alt="Image" class="img-fluid"></a>
-              <h3 class="block-service-1-heading mb-3"><a href="{% url 'contact' as url %}">Cupping Therapy</a></h3>
+              <a href="#" class="thumbnail-link d-block mb-4"><img src="{% static 'mainsite/images/img_3.jpg' %}" alt="Person recieving cupping" class="img-fluid"></a>
+              <h3 class="block-service-1-heading mb-3"><a href="{% url 'contact' }">Cupping Therapy</a></h3>
               <div class="block-service-1-excerpt"><p>An ancient practice used throughout the ages not only in Asia but also in Eastern Europe, the Middle East, and Latin America.</p></div>
-              <p><a href="{% url 'contact' as url %}" class="d-inline-flex align-items-center block-service-1-more"><span>Find out more</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
+              <p><a href="{% url 'prices' %}" class="d-inline-flex align-items-center block-service-1-more"><span>Find out more</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
             </div>
           </div>
         </div>
@@ -209,7 +209,7 @@
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-12 text-center">
-            <h2 class="site-section-heading text-center font-secondary">Happy Customers</h2>
+            <h2 class="site-section-heading text-center font-secondary">Testimonials</h2>
           </div>
         </div>
         <div class="row">
@@ -220,11 +220,11 @@
 
               <div class="d-block block-testimony mx-auto text-center">
                 <div class="person w-25 mx-auto mb-4">
-                  <img src="{% static 'mainsite/images/person_1.jpg' %}" alt="Image" class="img-fluid rounded-circle w-50 mx-auto">
+                  <img src="{% static 'mainsite/images/person_1.jpg' %}" alt="Carly" class="img-fluid rounded-circle w-50 mx-auto">
                 </div>
                 <div>
-                  <h2 class="h5 mb-4">Katie Johnson</h2>
-                  <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias accusantium qui optio, possimus necessitatibus voluptate aliquam velit nostrum tempora ipsam!&rdquo;</blockquote>
+                  <h2 class="h5 mb-4">Carly</h2>
+                  <blockquote>&ldquo;My job can be extremley demanding & stressfull and I always make sure I book myself in for a Swedish massage at least once a month to keep me feeling my best. The team also advise on lifestyle changes to help overall wellbeing... Thanks guys!&rdquo;</blockquote>
                 </div>
               </div>
 
@@ -233,18 +233,18 @@
                   <img src="{% static 'mainsite/images/person_2.jpg' %}" alt="Image" class="img-fluid rounded-circle w-50 mx-auto">
                 </div>
                 <div>
-                  <h2 class="h5 mb-4">Jun Mars</h2>
-                  <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias accusantium qui optio, possimus necessitatibus voluptate aliquam velit nostrum tempora ipsam!&rdquo;</blockquote>
+                  <h2 class="h5 mb-4">Dominic</h2>
+                  <blockquote>&ldquo;I regularly use JA Therapies for the sports massage treatment to aid with my recovery after training. As a marathon runner I would definatley recommend the courteous and professional service offered by the specialists. Great stuff!&rdquo;</blockquote>
                 </div>
               </div>
 
               <div class="d-block block-testimony mx-auto text-center">
                 <div class="person w-25 mx-auto mb-4">
-                  <img src="{% static 'mainsite/images/person_3.jpg' %}" alt="Image" class="img-fluid rounded-circle w-50 mx-auto">
+                  <img src="{% static 'mainsite/images/person_7.jpg' %}" alt="Image" class="img-fluid rounded-circle w-50 mx-auto">
                 </div>
                 <div>
-                  <h2 class="h5 mb-4">Katie Johnson</h2>
-                  <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias accusantium qui optio, possimus necessitatibus voluptate aliquam velit nostrum tempora ipsam!&rdquo;</blockquote>
+                  <h2 class="h5 mb-4">Rhiannon</h2>
+                  <blockquote>&ldquo;I suffered for years with allergic reactions to mainstream cosmetics and skin treatments. After having an personalised consultation they were able to formulate serums for my skin and hair that have worked wonders!&rdquo;</blockquote>
                 </div>
               </div>
 
@@ -253,8 +253,8 @@
                   <img src="{% static 'mainsite/images/person_4.jpg' %}" alt="Image" class="img-fluid rounded-circle w-50 mx-auto">
                 </div>
                 <div>
-                  <h2 class="h5 mb-4">Jun Mars</h2>
-                  <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias accusantium qui optio, possimus necessitatibus voluptate aliquam velit nostrum tempora ipsam!&rdquo;</blockquote>
+                  <h2 class="h5 mb-4">Adam</h2>
+                  <blockquote>&ldquo;I had alway heard about cupping therapy but was always a little worried and apprehensive about getting it done. The practitioner was very patient in making me feel at ease and understanding the process before committing. I feel it has had major benefit on my knee pain and I would not hesitate to use JA Therapies again!&rdquo;</blockquote>
                 </div>
               </div>
 
@@ -275,7 +275,7 @@
             <p class="mb-0 text-white lead">The more you book the more you save!</p>
           </div>
           <div class="col-lg-4">
-            <p class="mb-0"><a href="contact.html" class="btn btn-outline-white text-white btn-md btn-pill px-5 font-weight-bold btn-block">Contact Us</a></p>
+            <p class="mb-0"><a href="{% url 'contact' %}" class="btn btn-outline-white text-white btn-md btn-pill px-5 font-weight-bold btn-block">Contact Us</a></p>
           </div>
         </div>
       </div>

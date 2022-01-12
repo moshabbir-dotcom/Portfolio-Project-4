@@ -48,13 +48,13 @@
         <div class="row align-items-center">
           
           <div class="col-11 col-xl-4">
-            <h1 class="mb-0 site-logo"><a href="{% url 'home' as url %}" class="text-white mb-0"> JA Therapies<span class="text-primary">.</span> </a></h1>
+            <h1 class="mb-0 site-logo"><a href="{% url 'home' %}" class="text-white mb-0"> JA Therapies<span class="text-primary">.</span> </a></h1>
           </div>
           <div class="col-12 col-md-8 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right" role="navigation">
 
               <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li class="active"><a href="{% url 'home' as url %}"><span>Home</span></a></li>
+                <li class="active"><a href="{% url 'home' %}"><span>Home</span></a></li>
                 <li class="has-children">
                   <a href="services.html"><span>Services</span></a>
                   <ul class="dropdown arrow-top">
@@ -71,9 +71,9 @@
                     </li>
                   </ul>
                 </li>
-                <li><a href="about.html"><span>About</span></a></li>
-                <li><a href="blog.html"><span>Treatments & Prices</span></a></li>
-                <li><a href="{% url 'contact' as url %}"><span>Contact</span></a></li>
+                <li><a href="{% url 'about' %}"><span>About</span></a></li>
+                <li><a href="{% url 'prices' %}"><span>Treatments & Prices</span></a></li>
+                <li><a href="{% url 'contact' %}"><span>Contact</span></a></li>
               </ul>
             </nav>
           </div>
@@ -102,7 +102,7 @@
                   <li><a href="#">About Us</a></li>
                   <li><a href="#">Services</a></li>
                   <li><a href="#">Testimonials</a></li>
-                  <li><a href="{% url 'contact' as url %}">Contact Us</a></li>
+                  <li><a href="{% url 'contact' %}">Contact Us</a></li>
                 </ul>
               </div>
               <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
@@ -111,7 +111,7 @@
                   <li><a href="#">About Us</a></li>
                   <li><a href="#">Services</a></li>
                   <li><a href="#">Testimonials</a></li>
-                  <li><a href="{% url 'contact' as url %}">Contact Us</a></li>
+                  <li><a href="{% url 'contact' %}">Contact Us</a></li>
                 </ul>
               </div>
               <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
@@ -120,7 +120,7 @@
                   <li><a href="#">About Us</a></li>
                   <li><a href="#">Services</a></li>
                   <li><a href="#">Testimonials</a></li>
-                  <li><a href="{% url 'contact' as url %}">Contact Us</a></li>
+                  <li><a href="{% url 'contact' %}">Contact Us</a></li>
                 </ul>
               </div>
               <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
