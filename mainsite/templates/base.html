@@ -57,6 +57,7 @@
                 <li class="active"><a href="{% url 'home' %}"><span>Home</span></a></li>
                 <li><a href="{% url 'about' %}"><span>About</span></a></li>
                 <li><a href="{% url 'prices' %}"><span>Treatments & Prices</span></a></li>
+                <li><a href="{% url 'booking_form' %}">Bookings</a></li>
                 <li><a href="{% url 'contact' %}"><span>Contact</span></a></li>
               </ul>
             </nav>
@@ -177,9 +178,9 @@
               <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
                 <h2 class="footer-heading mb-4">Features</h2>
                 <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Services</a></li>
-                  <li><a href="#">Testimonials</a></li>
+                  <li><a href="{% url 'about' %}">About Us</a></li>
+                  <li><a href="{% url 'prices' %}">Services</a></li>
+                  <li><a href="{% url 'booking_form' %}">Bookings</a></li>
                   <li><a href="{% url 'contact' %}">Contact Us</a></li>
                 </ul>
               </div>

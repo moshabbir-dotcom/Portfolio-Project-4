@@ -15,6 +15,9 @@ def about(request):
 def prices(request):
     return render(request, 'prices.html')
 
+def booking_form(request):
+    return render(request, 'booking_form.html')
+
 def contact(request):
     if request.method == "POST":
         fname = request.POST['fname']
