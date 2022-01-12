@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %} Booking JA Therapies {% endblock %}
+{% block title %} Contact JA Therapies {% endblock %}
 {% block meta_description %}JA Therapies, Massage, Sports Therapy, Aromatherapy, Cupping, Hijama, Twickenham{% endblock %}
 {% block content %}
 
@@ -12,7 +12,7 @@
         
         <div class="row justify-content-center mb-4">
           <div class="col-md-10 text-center">
-            <h1 data-aos="fade-up" class="mb-5">We have solutions for your <span class="typed-words"></span></h1>
+            <h1 data-aos="fade-up" class="mb-5">Book with us to help you with your <span class="typed-words"></span></h1>
           </div>
         </div>
 
@@ -25,14 +25,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-7 mb-5"  data-aos="fade">
-        <!-- Put email confirmation here-->
-        <div>
-          <h2>Thanks {{ fname }},</h2>
-          <p> Your message about {{ subject }} has been recieved and someone will contact you on {{ email }} ...<br>
-             So please check your spam folder!</p>
-        </div>
-        <br><br><br><br><br><br><br><br>
-        
+           
 
         <form action="{% url 'contact' %}" method="POST" class="p-5 bg-white" style="margin-top: -150px;">
           {% csrf_token %}
@@ -58,23 +51,41 @@
           </div>
 
           <div class="row form-group">
-            
+
+            <div class="col-md-6 mb-3 mb-md-0">
+              <label class="text-black" for="date">Choose Date</label> 
+              <input type="date" name="date" id="date" class="form-control">
+            </div>
+            <div class="col-md-6 mb-3 mb-md-0">
+              <label class="text-black" for="time">Choose Time</label> 
+              <select type="time" name="time" id="time" class="form-control">
+                <option value="08:00-09:00">08:00-09:00</option>
+                <option value="09:00-10:00">09:00-10:00</option>
+                <option value="10:00-11:00">10:00-11:00</option>
+                <option value="11:00-12:00">11:00-12:00</option>
+                <option value="12:00-13:00">12:00-13:00</option>
+                <option value="13:00-14:00">13:00-14:00</option>
+                <option value="14:00-15:00">14:00-15:00</option>
+                <option value="15:00-16:00">15:00-16:00</option>
+                <option value="16:00-17:00">16:00-17:00</option>
+              </select>
+            </div>
+
+          </div>
+
+
+
+
+          <div class="row form-group">
             <div class="col-md-12">
-              <label class="text-black" for="subject">Subject</label> 
-              <input type="subject" name="subject" id="subject" class="form-control">
+              <label class="text-black" for="message">Additional Information</label> 
+              <textarea name="addinfo" name="addinfo" id="addinfo" cols="30" rows="7" class="form-control" placeholder="Add any additional information here..."></textarea>
             </div>
           </div>
 
           <div class="row form-group">
             <div class="col-md-12">
-              <label class="text-black" for="message">Message</label> 
-              <textarea name="message" name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Write your notes or questions here..."></textarea>
-            </div>
-          </div>
-
-          <div class="row form-group">
-            <div class="col-md-12">
-              <input type="submit" value="Send Message" class="btn btn-pill btn-primary btn-md text-white">
+              <input type="submit" value="Send Booking" class="btn btn-pill btn-primary btn-md text-white">
             </div>
           </div>
 

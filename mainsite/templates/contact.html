@@ -12,7 +12,7 @@
         
         <div class="row justify-content-center mb-4">
           <div class="col-md-10 text-center">
-            <h1 data-aos="fade-up" class="mb-5">We have solutions for your <span class="typed-words"></span></h1>
+            <h1 data-aos="fade-up" class="mb-5">Contact us to help you with your <span class="typed-words"></span></h1>
           </div>
         </div>
 
@@ -25,14 +25,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-7 mb-5"  data-aos="fade">
-        <!-- Put email confirmation here-->
-        <div>
-          <h2>Thanks {{ fname }},</h2>
-          <p> Your message about {{ subject }} has been recieved and someone will contact you on {{ email }} ...<br>
-             So please check your spam folder!</p>
-        </div>
-        <br><br><br><br><br><br><br><br>
-        
+               
 
         <form action="{% url 'contact' %}" method="POST" class="p-5 bg-white" style="margin-top: -150px;">
           {% csrf_token %}
