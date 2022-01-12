@@ -27,8 +27,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <img src="images/hero_bg_2.jpg" alt="Image" class="img-fluid rounded mb-3">
-          <img src="images/hero_bg_1.jpg" alt="Image" class="img-fluid rounded">
+          <img src="{% static 'mainsite/images/hero_bg_2.jpg' %}" alt="Image" class="img-fluid rounded mb-3">
+          <img src="{% static 'mainsite/images/hero_bg_1.jpg' %}" alt="Image" class="img-fluid rounded">
         </div>
         <div class="col-md-5 ml-auto">
           <h2 class="text-primary mb-3">About Our History</h2>
@@ -57,7 +57,7 @@
       <div class="row justify-content-center mb-5">
         <div class="col-md-7 text-center">
           <h2 class="text-primary mb-3">Our Staff</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis repudiandae quo, voluptatem possimus inventor.</p>
+          <p>Meet our team of friendly treatment professionals who are specialists in their areas. Feel free to <a href="{% url 'contact' %}">contact us</a> and ask for the specialist you require a consultation with.</p>
         </div>
       </div>
       <div class="row">
@@ -97,7 +97,7 @@
           <p class="mb-0 text-white lead">Plan for all your yearly treatments to get a great discount!</p>
         </div>
         <div class="col-lg-4">
-          <p class="mb-0"><a href="contact.html" class="btn btn-outline-white text-white btn-md btn-pill px-5 font-weight-bold btn-block">Contact Us</a></p>
+          <p class="mb-0"><a href="{% url 'contact' %}" class="btn btn-outline-white text-white btn-md btn-pill px-5 font-weight-bold btn-block">Contact Us</a></p>
         </div>
       </div>
     </div>
