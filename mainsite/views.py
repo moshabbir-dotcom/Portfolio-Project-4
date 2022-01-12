@@ -5,9 +5,14 @@ from django.core.mail import send_mail
 def home(request):
     return render(request, 'home.html')
 
+def contact(request):
+    return render(request, 'contact.html')
+
 def about(request):
     return render(request, 'about.html')
 
+def prices(request):
+    return render(request, 'prices.html')
 
 def contact(request):
     if request.method == "POST":
