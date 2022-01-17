@@ -6,9 +6,10 @@ class Client(models.Model):
     lname = models.CharField(max_length=50)
     email = models.EmailField(max_length=50)
     number = models.CharField(max_length=16, null=True)
+    message = models.CharField(max_length=1000, blank=True, null=True)
 
     def __str__(self):
-        return self.fname + ' ' + self.lname + ' ' + self.number + ' ' + self.email
+        return self.fname + ' ' + self.lname + ' ' + self.number + ' ' + self.email + self.message + ' '
 
 
 TIMESLOT_CHOICES = (
@@ -39,17 +40,17 @@ class Booking(models.Model):
     fname = models.CharField(max_length=50)
     lname = models.CharField(max_length=50)
     email = models.EmailField(max_length=50)
-    treatment = models.CharField(max_length=100, choices = THERAPY_CHOICES, default='08:00-09:00')
+    treatment = models.CharField(max_length=100, choices = THERAPY_CHOICES, default='Physical Therapy -£45')
     date = models.DateField(auto_now_add=False, null=True, blank=True)
     sent_date = models.DateField(auto_now_add=True)
     accepted = models.BooleanField(default=False)
     accepted_date = models.DateTimeField(auto_now=False, null=True, auto_now_add=False,)
     user = models.ForeignKey(Client, blank=True, null=True, on_delete=models.CASCADE)
     time = models.CharField(max_length=50, choices = TIMESLOT_CHOICES, default='08:00-09:00')
-    addinfo = models.TextField(max_length= 1000, blank=True)
+    addinfo = models.TextField(max_length= 1000, blank=True, null=True)
 
     def __str__(self):
-        return self.fname + ' ' + self.lname + ' ' + self.email + ' ' + self.treatment + ' '
+        return self.fname + ' ' + self.lname + ' ' + self.email + ' ' + self.treatment + self.date + self.addinfo
 
     class Meta:
         ordering = ['-sent_date']

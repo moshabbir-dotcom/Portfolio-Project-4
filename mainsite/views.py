@@ -31,22 +31,13 @@ def booking_form(request):
 def successful_submission(request):
     return render(request, 'successful_submission.html')
 
-def provisional_booking(request):
-    return render(request, 'provisional_booking.html')
+def booking(request):
+    if request.method == "POST":
+        form = BookingForm(request.POST or None)
+        if form.is_valid():
+            form.save()
+        return render(request, 'successful_submission.html')
 
-
-# def booking(request):
-#     if request.method == "POST":
-#         fname = request.POST['fname']
-#         lname = request.POST['lname']
-#         email = request.POST['email']
-#         date = request.POST['']
-#         time = request.POST['']
-#         addinfo = request.POST['addinfo']
-
-
-#         return render(request, 'provisional_booking.html', {
-
-#     else:
-#         return render(request, 'booking_form.html')
+    else:
+        return render(request, 'booking_form.html')
 
