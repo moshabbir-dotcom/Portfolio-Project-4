@@ -65,7 +65,6 @@ class Booking(models.Model):
     sent_date = models.DateField(auto_now_add=True)
     time = models.CharField(max_length=50, choices = TIMESLOT_CHOICES, default='08:00-09:00')
     accepted = models.BooleanField(default=False)
-    accepted_date = models.DateTimeField(auto_now=False, null=True, auto_now_add=False,)
     user = models.ForeignKey(SiteUser, null=True, on_delete=models.CASCADE)
     addinfo = models.TextField(max_length= 1000, blank=True, null=True)
 
