@@ -9,7 +9,10 @@ class Client(models.Model):
     message = models.CharField(max_length=1000, blank=True, null=True)
 
     def __str__(self):
-        return self.fname + ' ' + self.lname + ' ' + self.number + ' ' + self.email + self.message + ' '
+        return self.fname + ' ' + self.lname + ' ' + self.number + ' ' + self.email
+
+    class Meta:
+        ordering = ['fname', 'lname']
 
 
 TIMESLOT_CHOICES = (
@@ -25,14 +28,14 @@ TIMESLOT_CHOICES = (
 )
 
 THERAPY_CHOICES = (
-    ('physical_therapy', 'Physical Therapy -£45'),
-    ('sports_massage_therapy','Sports Massage Therapy -£45'),
-    ('fire_cupping_therapy','Fire Cupping Therapy -£50'),
-    ('swedish_massage_therapy','Swedish Massage Therapy -£45'),
-    ('aroma_therapy','Aromatherapy -£45'),
-    ('wet_cupping_therapy','Wet Cupping Therapy -£45'),
-    ('graston_therapy','Graston IATM Therapy -£45'),
-    ('nutrition_therapy','Nutritional Therapy -£45'),
+    ('Physical Therapy', 'Physical Therapy -£45'),
+    ('Sports Massage Therapy', 'Sports Massage Therapy -£45'),
+    ('Fire Cupping Therapy', 'Fire Cupping Therapy -£50'),
+    ('Swedish Massage Therapy', 'Swedish Massage Therapy -£45'),
+    ('Aromatherapy', 'Aromatherapy -£45'),
+    ('Wet Cupping Therapy', 'Wet Cupping Therapy -£45'),
+    ('Graston Therapy', 'Graston IATM Therapy -£45'),
+    ('Nutrition Therapy', 'Nutritional Therapy -£45'),
 )
 
 
@@ -50,7 +53,7 @@ class Booking(models.Model):
     addinfo = models.TextField(max_length= 1000, blank=True, null=True)
 
     def __str__(self):
-        return self.fname + ' ' + self.lname + ' ' + self.email + ' ' + self.treatment + self.date + self.addinfo
+        return self.fname + ' ' + self.lname + ' ' + self.treatment
 
     class Meta:
         ordering = ['-sent_date']
