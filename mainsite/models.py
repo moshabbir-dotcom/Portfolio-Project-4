@@ -1,12 +1,24 @@
 from django.db import models
 
 # Create your models here.
+class SiteUser(models.Model):
+    fname = models.CharField(max_length=50)
+    lname = models.CharField(max_length=50)
+    number = models.CharField(max_length=11, null=True)
+    email = models.EmailField(max_length=50)
+    passwrd = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.fname + ' ' + self.lname + ' ' + self.email
+
+
 class Client(models.Model):
     fname = models.CharField(max_length=50)
     lname = models.CharField(max_length=50)
     email = models.EmailField(max_length=50)
-    number = models.CharField(max_length=16, null=True)
+    number = models.CharField(max_length=11, null=True)
     message = models.CharField(max_length=1000, blank=True, null=True)
+    user = models.ForeignKey(SiteUser, blank=True, null=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.fname + ' ' + self.lname + ' ' + self.number + ' ' + self.email
@@ -28,14 +40,14 @@ TIMESLOT_CHOICES = (
 )
 
 THERAPY_CHOICES = (
-    ('Physical Therapy', 'Physical Therapy -£45'),
-    ('Sports Massage Therapy', 'Sports Massage Therapy -£45'),
-    ('Fire Cupping Therapy', 'Fire Cupping Therapy -£50'),
-    ('Swedish Massage Therapy', 'Swedish Massage Therapy -£45'),
-    ('Aromatherapy', 'Aromatherapy -£45'),
-    ('Wet Cupping Therapy', 'Wet Cupping Therapy -£45'),
-    ('Graston Therapy', 'Graston IATM Therapy -£45'),
-    ('Nutrition Therapy', 'Nutritional Therapy -£45'),
+    ('physical_therapy', 'Physical Therapy -£45'),
+    ('sports_massage_therapy', 'Sports Massage Therapy -£45'),
+    ('fire_cupping_therapy', 'Fire Cupping Therapy -£50'),
+    ('swedish_massage_therapy', 'Swedish Massage Therapy -£45'),
+    ('aroma_therapy', 'Aromatherapy -£45'),
+    ('wet_cupping_therapy', 'Wet Cupping Therapy -£45'),
+    ('graston_therapy', 'Graston IATM Therapy -£45'),
+    ('nutrition_therapy', 'Nutritional Therapy -£45'),
 )
 
 
@@ -46,14 +58,14 @@ class Booking(models.Model):
     treatment = models.CharField(max_length=100, choices = THERAPY_CHOICES, default='Physical Therapy -£45')
     date = models.DateField(auto_now_add=False, null=True, blank=True)
     sent_date = models.DateField(auto_now_add=True)
+    time = models.CharField(max_length=50, choices = TIMESLOT_CHOICES, default='08:00-09:00')
     accepted = models.BooleanField(default=False)
     accepted_date = models.DateTimeField(auto_now=False, null=True, auto_now_add=False,)
-    user = models.ForeignKey(Client, blank=True, null=True, on_delete=models.CASCADE)
-    time = models.CharField(max_length=50, choices = TIMESLOT_CHOICES, default='08:00-09:00')
+    user = models.ForeignKey(SiteUser, blank=True, null=True, on_delete=models.CASCADE)
     addinfo = models.TextField(max_length= 1000, blank=True, null=True)
 
     def __str__(self):
-        return self.fname + ' ' + self.lname + ' ' + self.treatment
+        return self.fname + ' ' + self.lname + ' ' + self.email + ' '
 
     class Meta:
         ordering = ['-sent_date']
