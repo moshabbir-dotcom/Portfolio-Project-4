@@ -37,7 +37,7 @@ class Booking(models.Model):
     addinfo = models.TextField(max_length= 1000, blank=True)
 
     def __str__(self):
-        return self.fname + ' ' + self.lname + ' ' + self.number + ' ' + self.email
+        return self.fname + ' ' + self.lname + ' ' + self.email + ' '
 
     class Meta:
         ordering = ['-sent_date']
