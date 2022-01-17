@@ -23,11 +23,23 @@ TIMESLOT_CHOICES = (
     ('16:00-17:00', '16:00 to 17:00'),
 )
 
+THERAPY_CHOICES = (
+    ('physical_therapy', 'Physical Therapy -£45'),
+    ('sports_massage_therapy','Sports Massage Therapy -£45'),
+    ('fire_cupping_therapy','Fire Cupping Therapy -£50'),
+    ('swedish_massage_therapy','Swedish Massage Therapy -£45'),
+    ('aroma_therapy','Aromatherapy -£45'),
+    ('wet_cupping_therapy','Wet Cupping Therapy -£45'),
+    ('graston_therapy','Graston IATM Therapy -£45'),
+    ('nutrition_therapy','Nutritional Therapy -£45'),
+)
+
 
 class Booking(models.Model):
     fname = models.CharField(max_length=50)
     lname = models.CharField(max_length=50)
     email = models.EmailField(max_length=50)
+    treatment = models.CharField(max_length=100, choices = THERAPY_CHOICES, default='08:00-09:00')
     date = models.DateField(auto_now_add=False, null=True, blank=True)
     sent_date = models.DateField(auto_now_add=True)
     accepted = models.BooleanField(default=False)
@@ -37,7 +49,7 @@ class Booking(models.Model):
     addinfo = models.TextField(max_length= 1000, blank=True)
 
     def __str__(self):
-        return self.fname + ' ' + self.lname + ' ' + self.email + ' '
+        return self.fname + ' ' + self.lname + ' ' + self.email + ' ' + self.treatment + ' '
 
     class Meta:
         ordering = ['-sent_date']
