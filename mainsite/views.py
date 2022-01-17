@@ -34,11 +34,7 @@ def booking(request):
         form = BookingForm(request.POST or None)
         if form.is_valid():
             form.save()
-            return render(request, 'successful_submission.html')
+            return render(request, 'successful_submission.html',)
         else:
-            print(form.errors)
-            return render(request, 'about.html')
-
-    else:
-        return render(request, 'booking_form.html')
+            return render(request, 'booking_form.html')
 

@@ -1,30 +1,35 @@
 from django.db import models
+from django.contrib.auth.models import User
+import datetime
 
 # Create your models here.
 class SiteUser(models.Model):
     fname = models.CharField(max_length=50)
     lname = models.CharField(max_length=50)
-    number = models.CharField(max_length=11, null=True)
-    email = models.EmailField(max_length=50)
+    number = models.CharField(max_length=11, unique=True)
+    email = models.EmailField(max_length=50, unique=True)
     passwrd = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.fname + ' ' + self.lname + ' ' + self.email
-
-
-class Client(models.Model):
-    fname = models.CharField(max_length=50)
-    lname = models.CharField(max_length=50)
-    email = models.EmailField(max_length=50)
-    number = models.CharField(max_length=11, null=True)
-    message = models.CharField(max_length=1000, blank=True, null=True)
-    user = models.ForeignKey(SiteUser, blank=True, null=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.fname + ' ' + self.lname + ' ' + self.number + ' ' + self.email
 
     class Meta:
-        ordering = ['fname', 'lname']
+        ordering = ['-fname', 'lname']
+
+
+class Client(models.Model):
+    fname = models.CharField(max_length=50)
+    lname = models.CharField(max_length=50)
+    email = models.EmailField(max_length=50, unique=True)
+    number = models.CharField(max_length=11, null=True, unique=True)
+    message = models.CharField(max_length=1000, blank=True, null=True)
+    recdate = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.fname + ' ' + self.lname + ' ' + self.number + ' ' + self.email + ' '
+
+    class Meta:
+        ordering = ['-recdate']
 
 
 TIMESLOT_CHOICES = (
@@ -56,12 +61,12 @@ class Booking(models.Model):
     lname = models.CharField(max_length=50)
     email = models.EmailField(max_length=50)
     treatment = models.CharField(max_length=100, choices = THERAPY_CHOICES, default='Physical Therapy -£45')
-    date = models.DateField(auto_now_add=False, null=True, blank=True)
+    date = models.DateField(auto_now_add=False, null=True)
     sent_date = models.DateField(auto_now_add=True)
     time = models.CharField(max_length=50, choices = TIMESLOT_CHOICES, default='08:00-09:00')
     accepted = models.BooleanField(default=False)
     accepted_date = models.DateTimeField(auto_now=False, null=True, auto_now_add=False,)
-    user = models.ForeignKey(SiteUser, blank=True, null=True, on_delete=models.CASCADE)
+    user = models.ForeignKey(SiteUser, null=True, on_delete=models.CASCADE)
     addinfo = models.TextField(max_length= 1000, blank=True, null=True)
 
     def __str__(self):
