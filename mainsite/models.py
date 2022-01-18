@@ -23,7 +23,7 @@ class SiteUser(models.Model):
 def create_or_update_user_profile(sender, instance, created, **kwargs):
     if created:
         SiteUser.objects.create(user=instance)
-    instance.SiteUser.save()
+    instance.siteuser.save()
 
 
 class Message(models.Model):
