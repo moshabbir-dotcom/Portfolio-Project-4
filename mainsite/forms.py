@@ -1,10 +1,10 @@
 from django import forms
-from .models import Client, Booking, SiteUser
+from .models import Message, Booking, SiteUser
 
 
-class ClientForm(forms.ModelForm):
+class MessageForm(forms.ModelForm):
     class Meta:
-        model = Client
+        model = Message
         fields = ['fname', 'lname', 'email', 'number']
 
 
@@ -14,9 +14,9 @@ class BookingForm(forms.ModelForm):
         fields = ['fname', 'lname', 'treatment', 'date', 'time', 'addinfo']
 
 
-class LoginForm(forms.ModelForm):
-    class Meta:
-        model = SiteUser
-        fields = ['email', 'passwrd']
+# class LoginForm(forms.ModelForm):
+#     class Meta:
+#         model = SiteUser
+#         fields = ['email', 'passwrd']
 
         

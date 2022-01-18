@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import SiteUser, Client, Booking
+from .models import SiteUser, Message, Booking
 # Register your models here.
 
 @admin.register(SiteUser)
@@ -10,8 +10,8 @@ class SiteUserAdmin(admin.ModelAdmin):
 
 
 
-@admin.register(Client)
-class ClientAdmin(admin.ModelAdmin):
+@admin.register(Message)
+class MessageAdmin(admin.ModelAdmin):
     list_display = ('fname', 'lname', 'email', 'number')
     list_filter = ('recdate',)
     ordering = ('-recdate',)

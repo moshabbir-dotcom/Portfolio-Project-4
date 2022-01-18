@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 #from django.core.mail import send_mail
-from .models import SiteUser, Client, Booking
-from .forms import ClientForm, BookingForm
+from .models import SiteUser, Message, Booking
+from .forms import MessageForm, BookingForm
 
 # Create your views here.
 
@@ -10,7 +10,7 @@ def home(request):
 
 def contact(request):
     if request.method == "POST":
-        form = ClientForm(request.POST or None)
+        form = MessageForm(request.POST or None)
         if form.is_valid():
             form.save()
         return render(request, 'successful_submission.html')
