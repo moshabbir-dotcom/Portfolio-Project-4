@@ -6,7 +6,7 @@ import datetime
 class SiteUser(models.Model):
     fname = models.CharField(max_length=50)
     lname = models.CharField(max_length=50)
-    number = models.CharField(max_length=11, unique=True)
+    number = models.CharField(max_length=11, unique=True, null=True)
     email = models.EmailField(max_length=50, unique=True)
     passwrd = models.CharField(max_length=50)
 

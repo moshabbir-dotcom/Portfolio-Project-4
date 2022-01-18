@@ -55,9 +55,14 @@
 
               <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
                 <li class="active"><a href="{% url 'home' %}"><span>Home</span></a></li>
+                {% if user.is_authenticated%}
+                <li><a href="{% url 'logout' %}"><span>Logout</span></a></li>
+                <li><a href="{% url 'booking_form' %}">Bookings</a></li>
+                {% else %}
+                <li><a href="{% url 'login' %}"><span>Login</span></a></li>
+                {% endif %}
                 <li><a href="{% url 'about' %}"><span>About</span></a></li>
                 <li><a href="{% url 'prices' %}"><span>Treatments & Prices</span></a></li>
-                <li><a href="{% url 'booking_form' %}">Bookings</a></li>
                 <li><a href="{% url 'contact' %}"><span>Contact</span></a></li>
               </ul>
             </nav>
