@@ -35,5 +35,15 @@ def booking(request):
             form.save()
         return render(request, 'mainsite/successful_submission.html',)
     else:
-            return render(request, 'mainsite/booking_form.html')
+        return render(request, 'mainsite/booking_form.html')
+
+
+def signup(request):
+    return render(request, 'allauth/account/signup.html')
+
+def login(request):
+    return render(request, 'allauth/account/login.html')
+
+def logout(request):
+    return render(request, 'allauth/account/logout.html')
 
