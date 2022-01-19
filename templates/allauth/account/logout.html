@@ -14,8 +14,14 @@
         
         <div class="row justify-content-center mb-4">
           <div class="col-md-10 text-center">
-            <h1 data-aos="fade-up" class="mb-5">We have solutions for your <span class="typed-words"></span></h1>
-
+            <h1 data-aos="fade-up" class="mb-5">{% trans 'Are you sure you want to sign out?' %}</h1>
+            <form method="post" action="{% url 'account_logout' %}">
+              {% csrf_token %}
+              {% if redirect_field_value %}
+              <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+              {% endif %}
+              <button type="submit">{% trans 'Sign Out' %}</button>
+            </form> 
             <p data-aos="fade-up" data-aos-delay="100"><a href="{% url 'booking_form' %}" class="btn btn-primary btn-pill">Book an appointment...</a></p>
           </div>
         </div>
@@ -24,18 +30,5 @@
     </div>
   </div>
 </div>
-
-<h1>{% trans "Sign Out" %}</h1>
-
-<p>{% trans 'Are you sure you want to sign out?' %}</p>
-
-<form method="post" action="{% url 'account_logout' %}">
-  {% csrf_token %}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-  {% endif %}
-  <button type="submit">{% trans 'Sign Out' %}</button>
-</form> 
-
 
 {% endblock %}
