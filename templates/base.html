@@ -54,11 +54,46 @@
             <nav class="site-navigation position-relative text-right" role="navigation">
 
               <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li class="active"><a href="{% url 'home' %}"><span>Home</span></a></li>
-                <li><a href="{% url 'booking_form' %}">Bookings</a></li>
-                <li><a href="{% url 'about' %}"><span>About</span></a></li>
-                <li><a href="{% url 'prices' %}"><span>Treatments & Prices</span></a></li>
-                <li><a href="{% url 'contact' %}"><span>Contact</span></a></li>
+                <li>
+                  <a href="{% url 'home' %}">
+                    <span>Home</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="{% url 'about' %}">
+                    <span>About</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="{% url 'prices' %}">
+                    <span>Treatments & Prices</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="{% url 'booking_form' %}">
+                    <span>Bookings</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="{% url 'contact' %}">
+                    <span>Contact</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>Signup</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>Login</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>Logout</span>
+                  </a>
+                </li>
               </ul>
             </nav>
           </div>
@@ -142,11 +177,11 @@
       <div class="container">
         <div class="row align-items-center justify-content-between">
           <div class="col-lg-7 mb-4 mb-lg-0">
-            <h2 class="mb-3 mt-0 text-white">Up to 25% off <script>document.write(new Date().getFullYear());</script> block bookings!!</h2>
+            <h2 class="mb-3 mt-0 text-white">Up to 25% cashback on completion of <script>document.write(new Date().getFullYear());</script> block bookings!!</h2>
             <p class="mb-0 text-white lead">The more you book the more you save!</p>
           </div>
           <div class="col-lg-4">
-            <p class="mb-0"><a href="{% url 'contact' %}" class="btn btn-outline-white text-white btn-md btn-pill px-5 font-weight-bold btn-block">Contact Us</a></p>
+            <p class="mb-0"><a href="{% url 'booking_form' %}" class="btn btn-outline-white text-white btn-md btn-pill px-5 font-weight-bold btn-block">Make Booking</a></p>
           </div>
         </div>
       </div>
@@ -249,6 +284,7 @@
             </script>
 
   <script src="{% static 'mainsite/js/main.js' %}"></script>
+  <script src="{% static 'mainsite/js/handleActiveNavLink.js' %}"></script>
   
   </body>
 </html>

@@ -2815,4 +2815,7 @@ h1, h2, h3, h4, h5,
   padding-bottom: 7px !important;
 }
 
+a .active {
+  color: #ea728c;
+}
 /*# sourceMappingURL=style.css.map */
