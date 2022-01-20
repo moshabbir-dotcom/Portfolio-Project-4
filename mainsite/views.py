@@ -57,3 +57,7 @@ def login(request):
 
 def logout(request):
     return render(request, 'allauth/account/logout.html')
+
+
+def renderdemo(request):
+    return render(request, 'mainsite/renderdemo.html')
