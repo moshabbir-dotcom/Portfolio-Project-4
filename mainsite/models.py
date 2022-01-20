@@ -5,34 +5,29 @@ from django.dispatch import receiver
 import datetime
 
 # Create your models here.
-class SiteUser(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    fname = models.CharField(max_length=50)
-    lname = models.CharField(max_length=50)
-    number = models.CharField(max_length=11, unique=True, null=True)
-    email = models.EmailField(max_length=50, unique=True)
-    passwrd = models.CharField(max_length=50)
+# class UserProfile(models.Model):
+#     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.user.username + ' ' + self.fname + ' ' + self.lname + ' ' + self.number + ' ' + self.email + ' '
+#     def __str__(self):
+#         return self.user.username + ' ' + self.fname + ' ' + self.lname + ' ' + self.number + ' ' + self.email + ' '
 
-    class Meta:
-        ordering = ['-fname', 'lname']
+#     class Meta:
+#         ordering = ['user']
 
-@receiver(post_save, sender=User)
-def create_or_update_user_profile(sender, instance, created, **kwargs):
-    if created:
-        SiteUser.objects.create(user=instance)
-    instance.siteuser.save()
+# @receiver(post_save, sender=User)
+# def create_or_update_user_profile(sender, instance, created, **kwargs):
+#     if created:
+#         UserProfile.objects.create(user=instance)
+#     instance.userprofile.save()
 
 
 class Message(models.Model):
     fname = models.CharField(max_length=50)
     lname = models.CharField(max_length=50)
     email = models.EmailField(max_length=50, unique=True)
-    number = models.CharField(max_length=11, null=True, unique=True)
+    pnumber = models.CharField(max_length=11, null=True, unique=True)
     message = models.CharField(max_length=1000, blank=True, null=True)
-    user = models.ForeignKey(SiteUser, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     recdate = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -75,7 +70,7 @@ class Booking(models.Model):
     sent_date = models.DateField(auto_now_add=True)
     time = models.CharField(max_length=50, choices = TIMESLOT_CHOICES, default='08:00-09:00')
     accepted = models.BooleanField(default=False)
-    user = models.ForeignKey(SiteUser, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, null= True, on_delete=models.CASCADE)
     addinfo = models.TextField(max_length= 1000, blank=True, null=True)
 
     def __str__(self):

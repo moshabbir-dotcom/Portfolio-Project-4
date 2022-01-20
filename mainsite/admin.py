@@ -1,21 +1,21 @@
 from django.contrib import admin
-from .models import SiteUser, Message, Booking
+from .models import User, Message, Booking
 # Register your models here.
 
-@admin.register(SiteUser)
-class SiteUserAdmin(admin.ModelAdmin):
-    list_display = ('fname', 'lname', 'email', 'number')
-    ordering = ('fname',)
-    search_fields = ('fname', 'lname', 'email', 'number')
+# @admin.register(UserProfile)
+# class UserProfileAdmin(admin.ModelAdmin):
+#     list_display = ('user',)
+#     ordering = ('user',)
+#     search_fields = ('user',)
 
 
 
 @admin.register(Message)
 class MessageAdmin(admin.ModelAdmin):
-    list_display = ('fname', 'lname', 'email', 'number')
+    list_display = ('fname', 'lname', 'email', 'pnumber')
     list_filter = ('recdate',)
     ordering = ('-recdate',)
-    search_fields = ('fname', 'lname', 'email', 'number')
+    search_fields = ('fname', 'lname', 'email', 'pnumber')
 
 
 @admin.register(Booking)

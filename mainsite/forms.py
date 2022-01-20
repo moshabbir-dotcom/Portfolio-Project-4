@@ -1,11 +1,11 @@
 from django import forms
-from .models import Message, Booking, SiteUser
+from .models import Message, Booking, User
 
 
 class MessageForm(forms.ModelForm):
     class Meta:
         model = Message
-        fields = ['fname', 'lname', 'email', 'number']
+        fields = ['fname', 'lname', 'email', 'pnumber']
 
 
 class BookingForm(forms.ModelForm):
@@ -14,9 +14,14 @@ class BookingForm(forms.ModelForm):
         fields = ['fname', 'lname', 'treatment', 'date', 'time', 'addinfo']
 
 
-# class LoginForm(forms.ModelForm):
-#     class Meta:
-#         model = SiteUser
-#         fields = ['email', 'passwrd']
+class SignupForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['username','email']
+
+class LoginForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['username', 'password',]
 
         

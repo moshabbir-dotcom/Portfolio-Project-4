@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, HttpResponse
 #from django.core.mail import send_mail
-from .models import SiteUser, Message, Booking
-from .forms import MessageForm, BookingForm
+from .models import Message, Booking, User
+from .forms import MessageForm, BookingForm, SignupForm
 
 # Create your views here.
 
@@ -39,11 +39,21 @@ def booking(request):
 
 
 def signup(request):
+    if request.method == "POST":
+        form = SignupForm(request.POST or None)
+        if form.is_valid():
+            form.save()
     return render(request, 'allauth/account/signup.html')
 
+
 def login(request):
+    if request.method == "POST":
+        form = SignupForm(request.POST or None)
+        if form.is_valid():
+            form.submit()
+        return redirect('mainsite/about.html')
     return render(request, 'allauth/account/login.html')
+
 
 def logout(request):
     return render(request, 'allauth/account/logout.html')
-
