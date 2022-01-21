@@ -150,9 +150,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # myaccount.google.com/lesssecureapps
 # https://accounts.google.com/DisplayUnlockCaptcha 
 # myaccount.google.com/apppasswords for check jas's google account if she has 2 factor auth
-# Email settings
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-EMAIL_USE_TLS = True
+# Email settings to be updated when going live
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+# EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+# EMAIL_USE_TLS = True
+
+# Django email backend for form testing go to (http://127.0.0.1:8000/**PAGE-NAME**)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
