@@ -26,7 +26,7 @@ class Message(models.Model):
     lname = models.CharField(max_length=50)
     email = models.EmailField(max_length=50, unique=True)
     pnumber = models.CharField(max_length=11, null=True, unique=True)
-    message = models.CharField(max_length=1000, blank=True, null=True)
+    message = models.TextField(max_length=1000, blank=True, null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     recdate = models.DateTimeField(auto_now_add=True)
 

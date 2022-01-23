@@ -70,6 +70,7 @@
                   </a>
                 </li>
                 <li>
+                  {% if user.is_authenticated %}
                   <a href="{% url 'booking_form' %}">
                     <span>Bookings</span>
                   </a>
@@ -80,6 +81,12 @@
                   </a>
                 </li>
                 <li>
+                  <a href="{% url 'account_logout' %}">
+                    <span>Logout</span>
+                  </a>
+                </li>
+                {% else %}
+                <li>
                   <a href="{% url 'account_signup' %}">
                     <span>Signup</span>
                   </a>
@@ -89,11 +96,8 @@
                     <span>Login</span>
                   </a>
                 </li>
-                <li>
-                  <a href="{% url 'account_logout' %}">
-                    <span>Logout</span>
-                  </a>
-                </li>
+                {% endif %}
+                
               </ul>
             </nav>
           </div>

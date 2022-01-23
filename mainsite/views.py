@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 from .models import Message, Booking, User
-from .forms import MessageForm, BookingForm, SignupForm
+from .forms import MessageForm, BookingForm, SignupForm, LoginForm
 
 # Create your views here.
 
@@ -19,6 +19,8 @@ def successful_submission(request):
     return render(request, 'mainsite/successful_submission.html')
 
 def contact(request):
+    context ={}
+    context['form']= MessageForm()
     if request.method == "POST":
         form = MessageForm(request.POST)
         if form.is_valid():
@@ -39,9 +41,11 @@ def contact(request):
                 return HttpResponse('Invalid Header Found')            
             return render(request, 'mainsite/successful_submission.html')
     else:
-        return render(request, 'mainsite/contact.html')
+        return render(request, 'mainsite/contact.html', context)
 
 def booking(request):
+    context ={}
+    context['form']= BookingForm()
     if request.method == "POST":
         form = BookingForm(request.POST)
         if form.is_valid():
@@ -63,29 +67,29 @@ def booking(request):
                 return HttpResponse('Invalid Header Found')            
             return render(request, 'mainsite/successful_submission.html')
     else:
-        return render(request, 'mainsite/contact.html')
+        return render(request, 'mainsite/contact.html', context)
 
 
 def signup(request):
+    context ={}
+    context['form']= SignupForm()
     if request.method == "POST":
         form = SignupForm(request.POST or None)
         if form.is_valid():
             form.save()
-    return render(request, 'allauth/account/signup.html')
+    return render(request, 'allauth/account/signup.html', context)
 
 
 def login(request):
+    context ={}
+    context['form']= LoginForm()
     if request.method == "POST":
         form = LoginForm(request.POST or None)
         if form.is_valid():
             form.submit()
         return redirect('mainsite/home.html')
-    return render(request, 'allauth/account/login.html')
+    return render(request, 'allauth/account/login.html', context)
 
 
 def logout(request):
     return render(request, 'mainsite/home.html')
-
-
-def renderdemo(request):
-    return render(request, 'mainsite/renderdemo.html')

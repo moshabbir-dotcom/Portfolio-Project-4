@@ -5,7 +5,7 @@ from .models import Message, Booking, User
 class MessageForm(forms.ModelForm):
     class Meta:
         model = Message
-        fields = ['fname', 'lname', 'email', 'pnumber']
+        fields = ['fname', 'lname', 'email', 'pnumber', 'message']
 
 
 class BookingForm(forms.ModelForm):
@@ -17,11 +17,11 @@ class BookingForm(forms.ModelForm):
 class SignupForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ['username','email']
+        fields = ['username','email', 'password']
 
 class LoginForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ['username', 'password',]
+        fields = ['username', 'password']
 
         

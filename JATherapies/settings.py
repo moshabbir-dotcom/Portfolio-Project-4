@@ -52,6 +52,9 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -159,3 +162,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Django email backend for form testing go to (http://127.0.0.1:8000/**PAGE-NAME**)
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
