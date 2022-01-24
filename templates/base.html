@@ -180,12 +180,17 @@
     <div class="mt-5 block-cta-1 primary-overlay" style="background-image: url('/static/mainsite/images/hero_bg_2.jpg')">
       <div class="container">
         <div class="row align-items-center justify-content-between">
+          
           <div class="col-lg-7 mb-4 mb-lg-0">
             <h2 class="mb-3 mt-0 text-white">Up to 25% cashback on completion of <script>document.write(new Date().getFullYear());</script> block bookings!!</h2>
             <p class="mb-0 text-white lead">The more you book the more you save!</p>
           </div>
           <div class="col-lg-4">
+            {% if user.is_authenticated %}
             <p class="mb-0"><a href="{% url 'booking_form' %}" class="btn btn-outline-white text-white btn-md btn-pill px-5 font-weight-bold btn-block">Make Booking</a></p>
+            {% else %}
+            <p class="mb-0"><a href="{% url 'account_login' %}" class="btn btn-outline-white text-white btn-md btn-pill px-5 font-weight-bold btn-block">Login</a></p>
+            {% endif %}
           </div>
         </div>
       </div>
@@ -201,8 +206,13 @@
                 <ul class="list-unstyled">
                   <li><a href="{% url 'about' %}">About Us</a></li>
                   <li><a href="{% url 'prices' %}">Treatments & Prices</a></li>
+                  {% if user.is_authenticated %}
                   <li><a href="{% url 'booking_form' %}">Booking</a></li>
                   <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                  {% else %}
+                  <li><a href="{% url 'account_signup' %}">Signup</a></li>
+                  <li><a href="{% url 'account_login' %}">Login</a></li>
+                  {% endif %}
                 </ul>
               </div>
               <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">

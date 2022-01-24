@@ -13,9 +13,12 @@
             
             <div class="row justify-content-center mb-4">
               <div class="col-md-10 text-center">
-                <h1 data-aos="fade-up" class="mb-5">We can help you with  <span class="typed-words"></span></h1>
-
-                <p data-aos="fade-up" data-aos-delay="100"><a href="{% url 'booking_form' %}" class="btn btn-primary btn-pill">Book Now!</a></p>
+                <h1 data-aos="fade-up" class="mb-5">We can help you with your <span class="typed-words"></span></h1>
+                {% if user.is_authenticated %}
+                <p data-aos="fade-up" data-aos-delay="100"><a href="{% url 'booking_form' %}" class="btn btn-primary btn-pill">Book an appointment...</a></p>
+                {% else %}
+                <p data-aos="fade-up" data-aos-delay="100"><a href="{% url 'account_login' %}" class="btn btn-primary btn-pill">Login...</a></p>
+                {% endif %}
               </div>
             </div>
 
@@ -40,10 +43,12 @@
             <div class="block-service-1-card">
               <a href="#" class="thumbnail-link d-block mb-4"><img src="{% static 'mainsite/images/img_4.jpg' %}" alt="Person recieving physical therapy" class="img-fluid"></a>
               <h3 class="block-service-1-heading mb-3"><a href="#">Physical Therapy - £45</a></h3>
-              <div class="block-service-1-excerpt"><p>Get care that's specific to your goals, your body, and your lifestyle.
-
-                Physical therapy can help you maximize your movement, manage pain, avoid surgery and reduce the need for  prescription drugs. It can help manage chronic (long-term) conditions, and prevent injury as well as aid with recovery.</p></div>
-              <p><a href="{% url 'booking_form' %}" class="d-inline-flex align-items-center block-service-1-more"><span>Book a treatment</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
+              <div class="block-service-1-excerpt"><p>Get care that's specific to your goals, your body, and your lifestyle. Physical therapy can help you maximize your movement, manage pain, avoid surgery and reduce the need for  prescription drugs. It can help manage chronic (long-term) conditions, and prevent injury as well as aid with recovery.</p></div>
+                {% if user.is_authenticated %}
+                <p><a href="{% url 'booking_form' %}" class="d-inline-flex align-items-center block-service-1-more"><span>Book a treatment</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
+                {% else %}
+                <p><a href="{% url 'account_login' %}" class="d-inline-flex align-items-center block-service-1-more"><span>Login</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
+                {% endif %}
             </div>
           </div>
           <div class="mb-4 mb-lg-4 col-sm-6 col-md-6 col-lg-3">
@@ -51,7 +56,11 @@
               <a href="#" class="thumbnail-link d-block mb-4"><img src="{% static 'mainsite/images/img_3.jpg' %}" alt="Person recieving sports massage" class="img-fluid"></a>
               <h3 class="block-service-1-heading mb-3"><a href="#">Sports Massage - £45</a></h3>
               <div class="block-service-1-excerpt"><p>SMT decreases muscle stiffness and soreness after exercise or physical activity. It can reduce recovery time post injury whilst increasing levels of relaxation. It can reduce both physical and psychological stress levels thereby aiding sleep quality.</p></div>
+              {% if user.is_authenticated %}
               <p><a href="{% url 'booking_form' %}" class="d-inline-flex align-items-center block-service-1-more"><span>Book a treatment</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
+              {% else %}
+              <p><a href="{% url 'account_login' %}" class="d-inline-flex align-items-center block-service-1-more"><span>Login</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
+              {% endif %}
             </div>
           </div>
           <div class="mb-4 mb-lg-4 col-sm-6 col-md-6 col-lg-3">
@@ -59,7 +68,11 @@
               <a href="#" class="thumbnail-link d-block mb-4"><img src="{% static 'mainsite/images/firecupping.jpg' %}" alt="Person recieving fire cupping therapy" class="img-fluid"></a>
               <h3 class="block-service-1-heading mb-3"><a href="#">Fire Cupping - £50</a></h3>
               <div class="block-service-1-excerpt"><p>The purpose of dry cupping is to promote healing through a non-invasive methods. Up to eight cups are applied during the session for about three minutes at a time. The suction under the cup causes the blood vessels to expand, encouraging blood flow and improving circulation to the affected area thereby promoting the bodies own healing mechanisms.</p></div>
+              {% if user.is_authenticated %}
               <p><a href="{% url 'booking_form' %}" class="d-inline-flex align-items-center block-service-1-more"><span>Book a treatment</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
+              {% else %}
+              <p><a href="{% url 'account_login' %}" class="d-inline-flex align-items-center block-service-1-more"><span>Login</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
+              {% endif %}
             </div>
           </div>
           <div class="mb-4 mb-lg-4 col-sm-6 col-md-6 col-lg-3">
@@ -67,7 +80,11 @@
               <a href="#" class="thumbnail-link d-block mb-4"><img src="{% static 'mainsite/images/swedish.jpg' %}" alt="Person having swedish hot stone treatment" class="img-fluid"></a>
               <h3 class="block-service-1-heading mb-3"><a href="#">Swedish Massage - £45</a></h3>
               <div class="block-service-1-excerpt"><p>This type of massage alleviates tension allowing muscles to relax and removing the imprint of physical stress. As a result, this can also help with postural improvement as muscles are no longer forced to overcompensate in a less than optimal manner thereby reducing muscle stiffness. Swedish massage has been reported to relieve tension headaches.</p></div>
+              {% if user.is_authenticated %}
               <p><a href="{% url 'booking_form' %}" class="d-inline-flex align-items-center block-service-1-more"><span>Book a treatment</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
+              {% else %}
+              <p><a href="{% url 'account_login' %}" class="d-inline-flex align-items-center block-service-1-more"><span>Login</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
+              {% endif %}
             </div>
           </div>
 
@@ -76,7 +93,11 @@
               <a href="#" class="thumbnail-link d-block mb-4"><img src="{% static 'mainsite/images/essential-oils.jpg' %}" alt="Aromatherapy equipment" class="img-fluid"></a>
               <h3 class="block-service-1-heading mb-3"><a href="#">Aromatherapy - £40</a></h3>
               <div class="block-service-1-excerpt"><p>Aromatherapy is the process of using aromatic plant materials to improve physical state and psychological wellbeing. It is also said to have positive effects on the immune system, with reports of essential oils positively influencing immunoglobulins in the blood (antibodies) through the olfactory system to calm stress, alleviate anxiety and help aid a restful sleep. Regular use of aromatherapy is believed to aid physical and emotional health by restoring and maintaining vitality.</p></div>
+              {% if user.is_authenticated %}
               <p><a href="{% url 'booking_form' %}" class="d-inline-flex align-items-center block-service-1-more"><span>Book a treatment</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
+              {% else %}
+              <p><a href="{% url 'account_login' %}" class="d-inline-flex align-items-center block-service-1-more"><span>Login</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
+              {% endif %}
             </div>
           </div>
           <div class="mb-4 mb-lg-4 col-sm-6 col-md-6 col-lg-3">
@@ -84,7 +105,11 @@
               <a href="#" class="thumbnail-link d-block mb-4"><img src="{% static 'mainsite/images/cupping.jpg' %}" alt="Person recieving cupping therapy" class="img-fluid"></a>
               <h3 class="block-service-1-heading mb-3"><a href="#">Wet Cupping - £55</a></h3>
               <div class="block-service-1-excerpt"><p>Cupping therapy increases blood circulation to the area where the cups are placed. This relieves muscle tension by improving overall blood flow and promoting cell formation & repair by assisting in helping form new connective tissues & blood vessels within the area of treatment. This is known as "wet cupping" as opposed to the non invasive "dry cupping" method.</p></div>
+              {% if user.is_authenticated %}
               <p><a href="{% url 'booking_form' %}" class="d-inline-flex align-items-center block-service-1-more"><span>Book a treatment</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
+              {% else %}
+              <p><a href="{% url 'account_login' %}" class="d-inline-flex align-items-center block-service-1-more"><span>Login</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
+              {% endif %}
             </div>
           </div>
           <div class="mb-4 mb-lg-4 col-sm-6 col-md-6 col-lg-3">
@@ -92,7 +117,11 @@
               <a href="#" class="thumbnail-link d-block mb-4"><img src="{% static 'mainsite/images/graston2.jpg' %}" alt="Graston IATM being performed" class="img-fluid"></a>
               <h3 class="block-service-1-heading mb-3"><a href="#">Graston IATM - £60</a></h3>
               <div class="block-service-1-excerpt"><p>Instrument Assisted Tissue Mobilisation is used to introduce controlled microtrauma to the soft tissue area to stimulate a local inflammatory response which initiates the re-absorption of excessive scar tissue. The remodelling of the soft tissue structure that was affected is then achieved. After this treatment and the remodelling of scar tissue, cells become organized to better promote movement.</p></div>
+              {% if user.is_authenticated %}
               <p><a href="{% url 'booking_form' %}" class="d-inline-flex align-items-center block-service-1-more"><span>Book a treatment</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
+              {% else %}
+              <p><a href="{% url 'account_login' %}" class="d-inline-flex align-items-center block-service-1-more"><span>Login</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
+              {% endif %}
             </div>
           </div>
           <div class="mb-4 mb-lg-4 col-sm-6 col-md-6 col-lg-3">
@@ -100,7 +129,11 @@
               <a href="#" class="thumbnail-link d-block mb-4"><img src="{% static 'mainsite/images/nutritionist.jpg' %}" alt="Nutrition consultation" class="img-fluid"></a>
               <h3 class="block-service-1-heading mb-3"><a href="#">Nutrition Plans - £40</a></h3>
               <div class="block-service-1-excerpt"><p>A healthy diet can protect the human body against certain types of diseases, in particular noncommunicable diseases such as obesity, diabetes, cardiovascular diseases, some types of cancer and skeletal conditions. Healthy diets can also contribute to an adequate body weight whilst improving the functioning of the body's internal regulatory system known as the endocrine system.</p></div>
+              {% if user.is_authenticated %}
               <p><a href="{% url 'booking_form' %}" class="d-inline-flex align-items-center block-service-1-more"><span>Book a treatment</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
+              {% else %}
+              <p><a href="{% url 'account_login' %}" class="d-inline-flex align-items-center block-service-1-more"><span>Login</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
+              {% endif %}
             </div>
           </div>
         </div>

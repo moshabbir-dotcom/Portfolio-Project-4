@@ -11,8 +11,11 @@
             <div class="row justify-content-center mb-4">
               <div class="col-md-10 text-center">
                 <h1 data-aos="fade-up" class="mb-5">We have solutions for your <span class="typed-words"></span></h1>
-
+                {% if user.is_authenticated %}
                 <p data-aos="fade-up" data-aos-delay="100"><a href="{% url 'booking_form' %}" class="btn btn-primary btn-pill">Book an appointment...</a></p>
+                {% else %}
+                <p data-aos="fade-up" data-aos-delay="100"><a href="{% url 'account_login' %}" class="btn btn-primary btn-pill">Login...</a></p>
+                {% endif %}
               </div>
             </div>
 
