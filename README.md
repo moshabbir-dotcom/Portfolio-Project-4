@@ -1,3 +1,116 @@
+
+# JA Therapies
+## Background
+JA therapies is the brainchild of S. Noor and J.Anand who was formed from a dream to offer holistic treaments to all that are rooted in recognised healthcare principles. They would like to have a professional looking website that exibits their level of expertise and professionalism.
+
+As the team is quite small and all have their own specialisms they require a website with a level of automation that would suit their needs. They would need and automated way for customers to make provisional bookings and a function for user to ba able to contact the business at their leisure in order for the relevant treatment specialist to be able to respond further reinforcing the specialist fields catered for by the business and promoting trust in the business and people itself.
+
+The aim is to build a website where only registered users may access the booking and messaging functions but where unregistered user may have enough information in order to be able to make an informed decision as to whether they would like to register or not as well as reducing the possibility of staff time being wasted by spoof contact requests and bookings.
+
+## User Experience
+### Site Owner Goals
+* Make it easy for customer to make an appointment
+* Be able to confirm appointments
+* Be able to cancel appointments
+* Be able to amend an appointment details
+* Be able to access customer details
+* Allow customers to see the services on offer with prices
+* Be able to recieve a message from customers through a message form
+* Be able to recieve a booking from a customer through a booking form
+* Allow customers to know where the clinic is located
+
+### Site User Goals
+* I will know where the JA Therapy clinic is located
+* I will know what kind of services the practice offers
+* I want to be able to book an appointment
+* I will be able to find out about the company and the level of skill of staff
+* I will be able to message the company with a contact request
+<!-- * I want to get a confirmation email with my appointment time
+* I want to be able to amend or delete an appointment -->
+
+### Planning
+* The project was planned using Github's project planning function. 
+<!-- INSERT PICTURE OR LINK WHEN COMPLETED -->
+
+## Design
+* The design was chosen by the business owner from a free template (called physical therapy) available on [Colorlib] (https://colorlib.com/wp/templates/). As the website is not currently being hosted the license for the template has not been purchased hence copyright information is still visible on the page until proof of concept is approved by the site owner. On approval this will continue to be a working project and will be cloned into a new respository.
+
+### Fonts
+* The fonts as per the template are "Rubik", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif. Fonts would remain relatively consistent in the event the site is viewed on different devices with the fonts of Roboto, Arial & sans-serif being available on all devices and the typefaces of "Rubik", "Segoe UI" & "Helvetica Neue" being referred to as typefaces as they include all the glyphs used to display a character such as the "J" in the main title.
+### Colours
+* The font was chosen by the site owner due to its clean contrast between colour combinations which were simple & warm conveying the relaxing enviroment of the clinic itself. It will allow for the official trademarked branding to be added at a later date as well as copyrighted photographs whilst remaining aesthitically pleasing. This was tested as part of the template selection process however for this project stock images have been used to not infringe on copyright.
+
+The contrast checking on the website showed 7 failed colour contrast pairs although this was an automated check and the checking site states "Automatic programs such as this cannot analyze text embedded in images and may misdiagnose or ignore certain critical issues. We recommend that you combine contrast testing results from this website with a manual test performed by a trained accessibility expert." With this in mind it is important to note that all issues raised were related to text within images so a recommendation would be to perform an accessibility analysis by a trained professional to ensure and prove digital compliance before the JA Therapies site is hosted in the public domain. [Bureau of Internet Accessibility](https://www.boia.org/)
+
+## Wireframe
+### Desktop
+<!-- ADD IMAGES -->
+### Mobile
+<!-- ADD IMAGES -->
+
+## Technologies
+### Languages
+* [HTML](https://www.w3schools.com/html/)
+* [CSS](https://www.w3schools.com/css/)
+* [JavaScript](https://www.w3schools.com/js/)
+* [Python](https://www.python.org/)
+
+### Tools & Frameworks
+* [GitHub](https://github.com/)
+* [Gitpod](https://www.gitpod.io/)
+* [Django](https://www.djangoproject.com/)
+* [Heroku](https://www.heroku.com/home)
+* [Postgres](https://www.postgresql.org/)
+* [Google Fonts](https://fonts.google.com/)
+* [W3C HTML Validation](https://validator.w3.org/)
+* [H3C CSS Validation](https://jigsaw.w3.org/css-validator/validator.html.en)
+* [http://pep8online.com/](http://pep8online.com/)
+* [a11y](https://color.a11y.com/Contrast/)
+* [TinyPNG](https://tinypng.com/)
+
+## Features
+### Navigation
+
+### Home
+
+### About
+
+### Contact
+
+### Booking
+
+## Code validation & Testing
+### Testing
+
+### HTML
+
+### CSS
+
+### JavaScript
+
+### Python
+
+## Rendering on different screen sizes
+### Desktop
+
+### Mobile
+
+## Deployment & setting up Postgres DB
+* On the home screen click on create new app
+* Enter project name & select region
+* Under resources add database to the app resources by selecting Herku Postgres and adding it to env.py in the follwing steps
+* Select settings and go to config vars and then reveal config vars
+* Set the secret key and database url in heroku config vars and env.py and finalise the connection in settings to ensure sensitive data is not visible in the settings.py file
+* Deploy to Heroku by selecting Github as the method and connecting vis the prompt
+* Click into the search box tyoe project name and then connect
+* Click deploy branch.
+* Once complete the view button will allow the app to be shown in a browser
+
+The program is set to be deployed automatically after each push from gitpod.
+
+### Credits
+##
+
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 Welcome moshabbir-dotcom,
