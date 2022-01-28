@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
+from django.contrib.auth.forms import AuthenticationForm
 from .models import Message, Booking, User
-from .forms import MessageForm, BookingForm, SignupForm, LoginForm
+from .forms import MessageForm, BookingForm, SignupForm
 
 # Create your views here.
 
@@ -77,17 +78,18 @@ def signup(request):
         form = SignupForm(request.POST or None)
         if form.is_valid():
             form.save()
+            return redirect('')
     return render(request, 'allauth/account/signup.html', context)
 
 
 def login(request):
     context ={}
-    context['form']= LoginForm()
+    context['form']= AuthenticationForm()
     if request.method == "POST":
-        form = LoginForm(request.POST or None)
+        form = AuthenticationForm(request.POST or None)
         if form.is_valid():
             form.submit()
-        return redirect('mainsite/home.html')
+            return redirect('')
     return render(request, 'allauth/account/login.html', context)
 
 

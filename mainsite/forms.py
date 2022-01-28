@@ -1,4 +1,5 @@
 from django import forms
+from django.contrib.auth.forms import UserCreationForm
 from .models import Message, Booking, User
 
 
@@ -14,14 +15,7 @@ class BookingForm(forms.ModelForm):
         fields = ['fname', 'lname', 'treatment', 'date', 'time', 'addinfo']
 
 
-class SignupForm(forms.ModelForm):
+class SignupForm(UserCreationForm):
     class Meta:
         model = User
-        fields = ['username','email', 'password']
-
-class LoginForm(forms.ModelForm):
-    class Meta:
-        model = User
-        fields = ['username', 'password']
-
-        
+        fields = ['username','email']
