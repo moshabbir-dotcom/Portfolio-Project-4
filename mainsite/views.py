@@ -1,27 +1,63 @@
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
-from django.contrib.auth.forms import AuthenticationForm
-from .models import Message, Booking, User
-from .forms import MessageForm, BookingForm, SignupForm
+from allauth.account.forms import SignupForm, LoginForm
+from .models import Message, Booking
+from .forms import MessageForm, BookingForm
 
 # Create your views here.
+
+# Views for all static pages
+
 
 def home(request):
     return render(request, 'mainsite/home.html')
 
+
 def about(request):
     return render(request, 'mainsite/about.html')
+
 
 def prices(request):
     return render(request, 'mainsite/prices.html')
 
+
 def successful_submission(request):
     return render(request, 'mainsite/successful_submission.html')
 
+
+def logout(request):
+    return render(request, 'mainsite/home.html')
+
+
+# View for allauth signup page
+def signup(request):
+    context = {}
+    context['form'] = SignupForm()
+    if request.method == "POST":
+        form = SignupForm(request.POST or None)
+        if form.is_valid():
+            form.save()
+            return redirect('mainsite/home.html')
+    return render(request, 'allauth/account/signup.html', context)
+
+# View for allauth login page
+
+
+def login(self, *args, **kwargs):
+    if request.method == "POST":
+        form = LoginForm(request.POST or None)
+        if form.is_valid():
+            form.submit()
+            return redirect('mainsite/home.html')
+    return render(request, 'allauth/account/login.html')
+
+# View for contact form page
+
+
 def contact(request):
-    context ={}
-    context['form']= MessageForm()
+    context = {}
+    context['form'] = MessageForm()
     if request.method == "POST":
         form = MessageForm(request.POST)
         if form.is_valid():
@@ -39,14 +75,17 @@ def contact(request):
             try:
                 send_mail(subject, message, 'jasleena@jatherapies.com', ['email'])
             except BadHeaderError:
-                return HttpResponse('Invalid Header Found')            
+                return HttpResponse('Invalid Header Found')
             return render(request, 'mainsite/successful_submission.html')
     else:
         return render(request, 'mainsite/contact.html', context)
 
+# View for booking form page
+
+
 def booking(request):
-    context ={}
-    context['form']= BookingForm()
+    context = {}
+    context['form'] = BookingForm()
     if request.method == "POST":
         form = BookingForm(request.POST)
         if form.is_valid():
@@ -65,33 +104,7 @@ def booking(request):
             try:
                 send_mail(subject, message, 'jasleena@jatherapies.com', ['email'])
             except BadHeaderError:
-                return HttpResponse('Invalid Header Found')            
+                return HttpResponse('Invalid Header Found')
             return render(request, 'mainsite/successful_submission.html')
     else:
         return render(request, 'mainsite/contact.html', context)
-
-
-def signup(request):
-    context ={}
-    context['form']= SignupForm()
-    if request.method == "POST":
-        form = SignupForm(request.POST or None)
-        if form.is_valid():
-            form.save()
-            return redirect('')
-    return render(request, 'allauth/account/signup.html', context)
-
-
-def login(request):
-    context ={}
-    context['form']= AuthenticationForm()
-    if request.method == "POST":
-        form = AuthenticationForm(request.POST or None)
-        if form.is_valid():
-            form.submit()
-            return redirect('')
-    return render(request, 'allauth/account/login.html', context)
-
-
-def logout(request):
-    return render(request, 'mainsite/home.html')
