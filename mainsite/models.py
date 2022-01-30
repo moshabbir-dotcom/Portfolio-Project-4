@@ -8,7 +8,8 @@ from django.contrib.auth.models import User
 #     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
 #     def __str__(self):
-#         return self.user.username + ' ' + self.fname + ' ' + self.lname + ' ' + self.number + ' ' + self.email + ' '
+#         return self.user.username + ' ' + self.fname + ' ' +\
+#                self.lname + ' ' + self.number + ' ' + self.email + ' '
 
 #     class Meta:
 #         ordering = ['user']
@@ -23,14 +24,15 @@ from django.contrib.auth.models import User
 class Message(models.Model):
     fname = models.CharField(max_length=50)
     lname = models.CharField(max_length=50)
-    email = models.EmailField(max_length=50, unique=True)
-    pnumber = models.CharField(max_length=11, null=True, unique=True)
-    message = models.TextField(max_length=1000, blank=True, null=True)
+    email = models.EmailField(max_length=50)
+    pnumber = models.CharField(max_length=11, null=True)
+    message = models.TextField(max_length=1000)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     recdate = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.fname + ' ' + self.lname + ' ' + self.pnumber + ' ' + self.email + ' '
+        return self.fname + ' ' + self.lname + ' ' + self.pnumber +\
+         ' ' + self.email + ' '
 
     class Meta:
         ordering = ['-recdate']
@@ -64,12 +66,14 @@ class Booking(models.Model):
     fname = models.CharField(max_length=50)
     lname = models.CharField(max_length=50)
     email = models.EmailField(max_length=50)
-    treatment = models.CharField(max_length=100, choices=THERAPY_CHOICES, default='Physical Therapy -£45')
-    date = models.DateField(auto_now_add=False, null=True)
+    treatment = models.CharField(max_length=100, choices=THERAPY_CHOICES,
+                                 default='Physical Therapy -£45')
+    date = models.DateField()
     sent_date = models.DateField(auto_now_add=True)
-    time = models.CharField(max_length=50, choices=TIMESLOT_CHOICES, default='08:00-09:00')
+    time = models.CharField(max_length=50, choices=TIMESLOT_CHOICES,
+                            default='08:00-09:00')
     accepted = models.BooleanField(default=False)
-    user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     addinfo = models.TextField(max_length=1000, blank=True, null=True)
 
     def __str__(self):

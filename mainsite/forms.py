@@ -1,6 +1,5 @@
 from django import forms
-from allauth.account.forms import SignupForm, LoginForm
-from .models import Message, Booking, User
+from .models import Message, Booking
 
 
 class MessageForm(forms.ModelForm):
@@ -12,16 +11,5 @@ class MessageForm(forms.ModelForm):
 class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
-        fields = ['fname', 'lname', 'treatment', 'date', 'time', 'addinfo', ]
-
-
-class SignupForm(SignupForm):
-    class Meta:
-        model = User
-        fields = ['username', 'email', ]
-
-
-class LoginForm(LoginForm):
-    class Meta:
-        model = User
-        fields = ['username', 'email', ]
+        fields = ['fname', 'lname', 'email', 'treatment', 'date',
+                  'time', 'addinfo', ]
