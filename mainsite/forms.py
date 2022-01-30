@@ -2,6 +2,9 @@ from django import forms
 from .models import Message, Booking
 
 
+class DateInput(forms.DateInput):
+    input_type = 'date'
+
 class MessageForm(forms.ModelForm):
     class Meta:
         model = Message
@@ -13,3 +16,6 @@ class BookingForm(forms.ModelForm):
         model = Booking
         fields = ['fname', 'lname', 'email', 'treatment', 'date',
                   'time', 'addinfo', ]
+        widgets = {
+            'date':DateInput(),
+        }
