@@ -9,28 +9,52 @@ The aim is to build a website where only registered users may access the booking
 
 ## User Experience
 ### Site Owner Goals
-* Make it easy for customer to make an appointment
-* Be able to confirm appointments
-* Be able to cancel appointments
-* Be able to amend an appointment details
-* Be able to access customer details
-* Allow customers to see the services on offer with prices
-* Be able to recieve a message from customers through a message form
-* Be able to recieve a booking from a customer through a booking form
-* Allow customers to know where the clinic is located
+* Make it easy for customer to make an appointment.
+* Be able to confirm appointments.
+* Be able to cancel appointments.
+* Be able to amend an appointment details.
+* Be able to access customer details.
+* Allow customers to see the services on offer with prices.
+* Be able to recieve a message from customers through a message form when logged in.
+* Be able to recieve a booking from a customer through a booking form when logged in.
+* Allow customers to know where the clinic is located.
 
 ### Site User Goals
-* I will know where the JA Therapy clinic is located
-* I will know what kind of services the practice offers
-* I want to be able to book an appointment
-* I will be able to find out about the company and the level of skill of staff
-* I will be able to message the company with a contact request
-<!-- * I want to get a confirmation email with my appointment time
-* I want to be able to amend or delete an appointment -->
+* I will know where the JA Therapy clinic is located.
+* I will know what kind of services the practice offers.
+* I want to be able to book an appointment.
+* I will be able to find out about the company and the level of skill of staff.
+* I will be able to message the company with a contact request.
+<!-- * I want to get a confirmation email with my appointment time. -->
+* I want to be able to view, amend or delete an appointment.
 
 ### Planning
 * The project was planned using Github's project planning function. 
 <!-- INSERT PICTURE OR LINK WHEN COMPLETED -->
+
+## Wireframe
+* The basic wireframe design was put together with the client with a few preference as to how the site was visualised and on discussion it was possible to identify a few points to work towards with an element of flexibility around vsualsto be reviewed at the end of every sprint. 
+
+### Desktop
+<img src="media/images/Dsk1_Dsk2.jpg">
+<img src="media/images/Dsk3.jpg">
+
+### Mobile
+<img src="media/images/Mob1_Mob2.jpg">
+<img src="media/images/Mob3.jpg">
+
+The points pulled from the wireframes were:
+* Every page to have a "hero" image with text overlay.
+* The menu and logo would fit convention standards with a "burger" menu for smaller screen sizes.
+* Quick link options at the bottom of each page with a Google maps link.
+
+* Once these were defined it was a case of finding a few free bootstrap templates for the client to select from which was then customised to fit the requirements of the client and was primarily on the allauth template pages and booking/contact form pages which were designed and customised to fit the aesthetic of the selected template both in HTML design and CSS styling. There was one piece of JavaScript code that was written specifically for the UX on the Nabvbar which is discussed in the development summary below.
+
+* The 2 designs that closest fit the clients requirements were:
+Yogalax
+<img src="media/images/Bootstrap1.jpg">
+Physical Therapy
+<img src="media/images/Bootstrap2.jpg">
 
 ## Design
 * The design was chosen by the business owner from a free template (called physical therapy) available on [Colorlib] (https://colorlib.com/wp/templates/). As the website is not currently being hosted the license for the template has not been purchased hence copyright information is still visible on the page until proof of concept is approved by the site owner. On approval this will continue to be a working project and will be cloned into a new respository.
@@ -42,11 +66,11 @@ The aim is to build a website where only registered users may access the booking
 
 The contrast checking on the website showed 7 failed colour contrast pairs although this was an automated check and the checking site states "Automatic programs such as this cannot analyze text embedded in images and may misdiagnose or ignore certain critical issues. We recommend that you combine contrast testing results from this website with a manual test performed by a trained accessibility expert." With this in mind it is important to note that all issues raised were related to text within images so a recommendation would be to perform an accessibility analysis by a trained professional to ensure and prove digital compliance before the JA Therapies site is hosted in the public domain. [Bureau of Internet Accessibility](https://www.boia.org/)
 
-## Wireframe
-### Desktop
-<!-- ADD IMAGES -->
-### Mobile
-<!-- ADD IMAGES -->
+However slightly adjusting the colour contrast allowed the test to pass:
+*Before:
+<img src="media/images/ContrastFail.jpg">
+*After:
+<img src="media/images/ContrastPass.jpg">
 
 ## Technologies
 ### Languages
@@ -70,26 +94,33 @@ The contrast checking on the website showed 7 failed colour contrast pairs altho
 
 ## Features
 ### Navigation
+* The navigation bar was designed as a full size menu right aligned as per convention for the desktop version although the menu did not show which page the user was on reulting in poor UX. To address this the handleActivNavLink.js file was written so that an "addClass" would be added to the navlink of the viewed page allowing for the corresponsing CSS to take effect.
+* As per the clients request the menu was a "burger" menu on smaller devices and a concious decision was made by the client to not utilise a collapsible menu on the site to not have the site seem to "busy".
 
 ### Home
 
 ### About
 
 ### Contact
+* This is a page that was set to only be viewed when the user is logged in and was set using the allauth decorator of "login_required" in the views.py file to ensure that it coulds not be accessed by writing the url directly in the address bar.
+
+<!-- FINISH THIS -->
 
 ### Booking
-
+* This is a page that was set to only be viewed when the user is logged in and was set using the allauth decorator of "login_required" in the views.py file to ensure that it coulds not be accessed by writing the url directly in the address bar.
+<!-- FINISH THIS -->
 ## Code validation & Testing
 ### Testing
+* The TestCase module imported from Django.test was used to test 
 
 ### HTML
-
+<!-- CODE TEST RESULT TO GO HERE -->
 ### CSS
-
+<!-- CODE TEST RESULT TO GO HERE -->
 ### JavaScript
-
+<!-- CODE TEST RESULT TO GO HERE -->
 ### Python
-
+<!-- CODE TEST RESULT TO GO HERE -->
 ## Rendering on different screen sizes
 ### Desktop
 
