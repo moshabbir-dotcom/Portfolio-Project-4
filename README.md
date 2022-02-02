@@ -52,9 +52,9 @@ The points pulled from the wireframes were:
 
 * The 2 designs that closest fit the clients requirements were:
 Yogalax
-<img src="media/images/Bootstrap1.jpg">
+<img src="media/images/Bootstrap1.png">
 Physical Therapy
-<img src="media/images/Bootstrap2.jpg">
+<img src="media/images/Bootstrap2.png">
 
 ## Design
 * The design was chosen by the business owner from a free template (called physical therapy) available on [Colorlib] (https://colorlib.com/wp/templates/). As the website is not currently being hosted the license for the template has not been purchased hence copyright information is still visible on the page until proof of concept is approved by the site owner. On approval this will continue to be a working project and will be cloned into a new respository.
@@ -64,13 +64,13 @@ Physical Therapy
 ### Colours
 * The font was chosen by the site owner due to its clean contrast between colour combinations which were simple & warm conveying the relaxing enviroment of the clinic itself. It will allow for the official trademarked branding to be added at a later date as well as copyrighted photographs whilst remaining aesthitically pleasing. This was tested as part of the template selection process however for this project stock images have been used to not infringe on copyright.
 
-The contrast checking on the website showed 7 failed colour contrast pairs although this was an automated check and the checking site states "Automatic programs such as this cannot analyze text embedded in images and may misdiagnose or ignore certain critical issues. We recommend that you combine contrast testing results from this website with a manual test performed by a trained accessibility expert." With this in mind it is important to note that all issues raised were related to text within images so a recommendation would be to perform an accessibility analysis by a trained professional to ensure and prove digital compliance before the JA Therapies site is hosted in the public domain. [Bureau of Internet Accessibility](https://www.boia.org/)
+The contrast checking on the website showed 7 failed colour contrast pairs although this was an automated check and the checking site states <em>"Automatic programs such as this cannot analyze text embedded in images and may misdiagnose or ignore certain critical issues. We recommend that you combine contrast testing results from this website with a manual test performed by a trained accessibility expert."</em> With this in mind it is important to note that all issues raised were related to text within images so a recommendation would be to perform an accessibility analysis by a trained professional to ensure and prove digital compliance before the JA Therapies site is hosted in the public domain. [Bureau of Internet Accessibility](https://www.boia.org/)
 
-However slightly adjusting the colour contrast allowed the test to pass:
+However slightly adjusting the colour contrast by amending the css stylesheet allowed the test to pass:
 *Before:
-<img src="media/images/ContrastFail.jpg">
+<img src="media/images/ContrastFail.png">
 *After:
-<img src="media/images/ContrastPass.jpg">
+<img src="media/images/ContrastPass.png">
 
 ## Technologies
 ### Languages
@@ -98,16 +98,28 @@ However slightly adjusting the colour contrast allowed the test to pass:
 * As per the clients request the menu was a "burger" menu on smaller devices and a concious decision was made by the client to not utilise a collapsible menu on the site to not have the site seem to "busy".
 
 ### Home
+<img src="media/images/Mob1REAL.png">
+<img src="media/images/HomeDsk1.png">
+<img src="media/images/FooterMob.png">
+<img src="media/images/FooterDsk.png">
 
 ### About
+<img src="media/images/TestemonialMob.png">
+<img src="media/images/TestemonialDsk.png">
+<img src="media/images/AboutMob.png">
+<img src="media/images/AboutDsk.png">
+
+### Treatments & Prices
+<img src="media/images/TherapiesMob.png">
+<img src="media/images/TherapiesDsk.png">
 
 ### Contact
-* This is a page that was set to only be viewed when the user is logged in and was set using the allauth decorator of "login_required" in the views.py file to ensure that it coulds not be accessed by writing the url directly in the address bar.
+* This is a page that was set to only be viewed when the user is logged in and was set using the allauth decorator of "login_required" in the views.py file to ensure that it coulds not be accessed by writing the url directly in the address bar. The links for this page across the website were embedded in "if" statements where the links to this page would only be visible in the event the user was authenticated. Otherwise the user would be directed to the signup page to first make an account.
 
 <!-- FINISH THIS -->
 
 ### Booking
-* This is a page that was set to only be viewed when the user is logged in and was set using the allauth decorator of "login_required" in the views.py file to ensure that it coulds not be accessed by writing the url directly in the address bar.
+* This is a page that was set to only be viewed when the user is logged in and was set using the allauth decorator of "login_required" in the views.py file to ensure that it coulds not be accessed by writing the url directly in the address bar.The links for this page were as the homepage in that across the website they were embedded in "if" statements where the links to this page would only be visible in the event the user was authenticated. Otherwise the user would be directed to the signup page to first make an account.
 <!-- FINISH THIS -->
 ## Code validation & Testing
 ### Testing
