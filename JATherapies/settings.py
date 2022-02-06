@@ -12,9 +12,12 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+# import environ
+import sys
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
@@ -95,13 +98,16 @@ WSGI_APPLICATION = 'JATherapies.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-import sys
-if 'test' in sys.argv or 'test_coverage' in sys.argv: #Covers regular testing and django-coverage (taken from stack overflow)
+
+# Covers regular testing and django-coverage (taken from stack overflow)
+
+
+if 'test' in sys.argv or 'test_coverage' in sys.argv:
     DATABASES = {
-    'default': {
-          'ENGINE': 'django.db.backends.sqlite3',
-          'NAME': BASE_DIR / 'test_db.sqlite3',
-      }
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'test_db.sqlite3',
+        }
     }
 else:
     DATABASES = {
@@ -114,16 +120,20 @@ else:
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': ('django.contrib.auth.password_validation.'
+                 'UserAttributeSimilarityValidator'),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': ('django.contrib.auth.password_validation'
+                 '.MinimumLengthValidator'),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': ('django.contrib.auth.password_validation'
+                 '.CommonPasswordValidator'),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': ('django.contrib.auth.password_validation'
+                 '.NumericPasswordValidator'),
     },
 ]
 
@@ -146,7 +156,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_STORAGE = ('cloudinary_storage.storage.'
+                       'StaticHashedCloudinaryStorage')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
@@ -159,8 +170,8 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # myaccount.google.com/lesssecureapps
-# https://accounts.google.com/DisplayUnlockCaptcha 
-# myaccount.google.com/apppasswords for check jas's google account if she has 2 factor auth
+# https://accounts.google.com/DisplayUnlockCaptcha
+# myaccount.google.com/apppasswords
 # Email settings to be updated when going live
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
@@ -168,6 +179,6 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
 
-# Django email backend for form testing go to (http://127.0.0.1:8000/**PAGE-NAME**)
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
+# Django email backend for form testing go to
+# (http://127.0.0.1:8000/**PAGE-NAME**)
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

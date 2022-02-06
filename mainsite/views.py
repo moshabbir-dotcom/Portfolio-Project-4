@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from .models import Booking
 from .forms import MessageForm, BookingForm
 from django.contrib.auth.decorators import login_required
+import os
 
 # Create your views here.
 
@@ -25,12 +26,14 @@ def prices(request):
 def successful_submission(request):
     return render(request, 'mainsite/successful_submission.html')
 
+
 @login_required
 def manage_booking(request):
     bookings = Booking.objects.filter(user=request.user)
     return render(request, 'mainsite/manage_booking.html', {"bookings":bookings})
 
 # View for contact form page
+
 
 @login_required
 def contact(request):
@@ -53,8 +56,8 @@ def contact(request):
             message = "\n".join(body.values())
 
             try:
-                send_mail(subject, message, 'moshabbir@ymail.com',
-                          ['email'])
+                send_mail(subject, message, form.cleaned_data['email'],
+                          [os.environ["CONTACT_EMAIL"]])
             except BadHeaderError:
                 return HttpResponse('Invalid Header Found')
             return render(request, 'mainsite/successful_submission.html')
@@ -62,6 +65,7 @@ def contact(request):
         return render(request, 'mainsite/contact.html', context)
 
 # View for booking form page
+
 
 @login_required
 def make_booking(request):
@@ -86,13 +90,14 @@ def make_booking(request):
             message = "\n".join(body.values())
 
             try:
-                send_mail(subject, message, os.environ["CONTACT_EMAIL"],
-                          ['email'])
+                send_mail(subject, message, form.cleaned_data['email'],
+                          [os.environ["CONTACT_EMAIL"]])
             except BadHeaderError:
                 return HttpResponse('Invalid Header Found')
             return render(request, 'mainsite/successful_submission.html')
     else:
         return render(request, 'mainsite/booking_form.html', context)
+
 
 @login_required
 def delete_booking(request, id):
@@ -101,6 +106,7 @@ def delete_booking(request, id):
         return redirect('manage_booking')
     booking.delete()
     return redirect('manage_booking')
+
 
 @login_required
 def edit_booking(request, id):

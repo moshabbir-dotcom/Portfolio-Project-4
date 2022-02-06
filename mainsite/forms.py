@@ -5,6 +5,7 @@ from .models import Message, Booking
 class DateInput(forms.DateInput):
     input_type = 'date'
 
+
 class MessageForm(forms.ModelForm):
     class Meta:
         model = Message
@@ -17,5 +18,5 @@ class BookingForm(forms.ModelForm):
         fields = ['fname', 'lname', 'email', 'treatment', 'date',
                   'time', 'addinfo', ]
         widgets = {
-            'date':DateInput(),
+            'date': DateInput(),
         }

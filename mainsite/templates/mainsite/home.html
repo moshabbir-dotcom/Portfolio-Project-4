@@ -2,154 +2,170 @@
 {% load static %}
 {% block content %}
 
-    <div class="site-blocks-cover overlay" style="background-image: url({% static 'mainsite/images/hero_bg_1.jpg' %});" data-aos="fade" data-stellar-background-ratio="0.5">
-      <div class="container">
+<div class="site-blocks-cover overlay" style="background-image: url({% static 'mainsite/images/hero_bg_1.jpg' %});" data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="container">
         <div class="row align-items-center justify-content-center text-center">
 
-          <div class="col-md-10">
-            
-            <div class="row justify-content-center mb-4">
-              <div class="col-md-10 text-center">
-                <h1 data-aos="fade-up" class="mb-5">We have solutions for your <span class="typed-words"></span></h1>
-                {% if user.is_authenticated %}
-                <p data-aos="fade-up" data-aos-delay="100"><a href="{% url 'booking_form' %}" class="btn btn-primary btn-pill">Book an appointment...</a></p>
-                {% else %}
-                <p data-aos="fade-up" data-aos-delay="100"><a href="{% url 'account_login' %}" class="btn btn-primary btn-pill">Login...</a></p>
-                {% endif %}
-              </div>
+            <div class="col-md-10">
+
+                <div class="row justify-content-center mb-4">
+                    <div class="col-md-10 text-center">
+                        <h1 data-aos="fade-up" class="mb-5">We have solutions for your <span class="typed-words"></span></h1>
+                        {% if user.is_authenticated %}
+                        <p data-aos="fade-up" data-aos-delay="100"><a href="{% url 'booking_form' %}" class="btn btn-primary btn-pill">Book an appointment...</a></p>
+                        {% else %}
+                        <p data-aos="fade-up" data-aos-delay="100"><a href="{% url 'account_login' %}" class="btn btn-primary btn-pill">Login...</a></p>
+                        {% endif %}
+                    </div>
+                </div>
+
             </div>
-
-          </div>
         </div>
-      </div>
-    </div>  
+    </div>
+</div>
 
 
 
-    <div class="block-quick-info-2">
-      <div class="container">
+<div class="block-quick-info-2">
+    <div class="container">
         <div class="block-quick-info-2-inner">
-          <div class="row">
-            <div class="col-sm-6 col-md-6 col-lg-3 mb-3 mb-lg-0">
-              <div class="d-flex quick-info-2">
-                <span class="icon icon-home mr-3"></span>
-                <div class="text">
-                  <strong class="d-block heading">Visit our Location</strong>
-                  <span class="excerpt">786 Staines Rd. Twickenham, Middlesex, TW2 5JD</span>
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-3 mb-3 mb-lg-0">
+                    <div class="d-flex quick-info-2">
+                        <span class="icon icon-home mr-3"></span>
+                        <div class="text">
+                            <strong class="d-block heading">Visit our Location</strong>
+                            <span class="excerpt">786 Staines Rd. Twickenham, Middlesex, TW2 5JD</span>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-3 mb-3 mb-lg-0">
-              <div class="d-flex quick-info-2">
-                <span class="icon icon-phone mr-3"></span>
-                <div class="text">
-                  <strong class="d-block heading">Call us today</strong>
-                  <span class="excerpt"><a href="#">07847 516431</a></span>
+                <div class="col-sm-6 col-md-6 col-lg-3 mb-3 mb-lg-0">
+                    <div class="d-flex quick-info-2">
+                        <span class="icon icon-phone mr-3"></span>
+                        <div class="text">
+                            <strong class="d-block heading">Call us today</strong>
+                            <span class="excerpt"><a href="#">07847 516431</a></span>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-3 mb-3 mb-lg-0">
-              <div class="d-flex quick-info-2">
-                <span class="icon icon-envelope mr-3"></span>
-                <div class="text">
-                  <strong class="d-block heading">Send us a message</strong>
-                  <span class="excerpt"><a href="#">jasleena@jatherapies.com</a></span>
+                <div class="col-sm-6 col-md-6 col-lg-3 mb-3 mb-lg-0">
+                    <div class="d-flex quick-info-2">
+                        <span class="icon icon-envelope mr-3"></span>
+                        <div class="text">
+                            <strong class="d-block heading">Send us a message</strong>
+                            <span class="excerpt"><a href="#">jasleena@jatherapies.com</a></span>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-3 mb-3 mb-lg-0">
-              <div class="d-flex quick-info-2">
-                <span class="icon icon-clock-o mr-3"></span>
-                <div class="text">
-                  <strong class="d-block heading">Opening hours</strong>
-                  <span class="excerpt">Mon-Sat 8:AM - 5PM</span>
+                <div class="col-sm-6 col-md-6 col-lg-3 mb-3 mb-lg-0">
+                    <div class="d-flex quick-info-2">
+                        <span class="icon icon-clock-o mr-3"></span>
+                        <div class="text">
+                            <strong class="d-block heading">Opening hours</strong>
+                            <span class="excerpt">Mon-Sat 8:AM - 5PM</span>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
+</div>
 
-    <div class="block-services-1 py-5">
-      <div class="container">
+<div class="block-services-1 py-5">
+    <div class="container">
         <div class="row">
-          <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
-            <h3 class="mb-3">What We Offer</h3>
-            <p>A range of alternative, holistic and sports therapies by a fully certified team of treatment professionals specialising in areas such as Swedish massage, Sports massage, Aromatherapy, Garston Technique and Cupping treatments.</p>
-            <p><a href="{% url 'prices' %}" class="d-inline-flex align-items-center block-service-1-more"><span>See all services</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
-          </div>
-          <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
-            <div class="block-service-1-card">
-              <a href="#" class="thumbnail-link d-block mb-4"><img src="{% static 'mainsite/images/img_2.jpg' %}" alt="Person recieving physical Therapy" class="img-fluid"></a>
-              <h3 class="block-service-1-heading mb-3"><a href="{% url 'contact' as url %}">Physical Therapies</a></h3>
-              <div class="block-service-1-excerpt"><p>Sports massage and rehabilitation by our in house level 4 personal trainer, including such as Graston IATM treatment. Recieve not only treatments nut also advice on preventative measures to aid in the maintenance of your body's health & wellbeing.</p></div>
-              <p><a href="{% url 'prices' %}" class="d-inline-flex align-items-center block-service-1-more"><span>Find out more</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
+            <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
+                <h3 class="mb-3">What We Offer</h3>
+                <p>A range of alternative, holistic and sports therapies by a fully certified team of treatment professionals
+                    specialising in areas such as Swedish massage, Sports massage, Aromatherapy, Garston Technique and Cupping
+                    treatments.</p>
+                <p><a href="{% url 'prices' %}" class="d-inline-flex align-items-center block-service-1-more"><span>See all
+                            services</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
             </div>
-          </div>
-          <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
-            <div class="block-service-1-card">
-              <a href="#" class="thumbnail-link d-block mb-4"><img src="{% static 'mainsite/images/img_1.jpg' %}" alt="Person recieving Swedish Massage" class="img-fluid"></a>
-              <h3 class="block-service-1-heading mb-3"><a href="{% url 'contact' %}">Relaxation Therapies</a></h3>
-              <div class="block-service-1-excerpt"><p>Swedish massage using hand blended essential oils formulations to help with circulation, recovery and the stresses of everyday life. We also off wet/dry cupping; An ancient practice used throughout the ages not only in Asia but also in Eastern Europe, the Middle East, and Latin America.</p></div>
-              <p><a href="{% url 'prices' %}" class="d-inline-flex align-items-center block-service-1-more"><span>Find out more</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
+            <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
+                <div class="block-service-1-card">
+                    <a href="#" class="thumbnail-link d-block mb-4"><img src="{% static 'mainsite/images/img_2.jpg' %}" alt="Person recieving physical Therapy" class="img-fluid"></a>
+                    <h3 class="block-service-1-heading mb-3"><a href="{% url 'contact' as url %}">Physical Therapies</a></h3>
+                    <div class="block-service-1-excerpt">
+                        <p>Sports massage and rehabilitation by our in house level 4 personal trainer, including such as Graston
+                            IATM treatment. Recieve not only treatments nut also advice on preventative measures to aid in the
+                            maintenance of your body's health & wellbeing.</p>
+                    </div>
+                    <p><a href="{% url 'prices' %}" class="d-inline-flex align-items-center block-service-1-more"><span>Find out
+                                more</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
+                </div>
             </div>
-          </div>
-          <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
-            <div class="block-service-1-card">
-              <a href="#" class="thumbnail-link d-block mb-4"><img src="{% static 'mainsite/images/nutritionist.jpg' %}" alt="Person recieving nutrition advice" class="img-fluid"></a>
-              <h3 class="block-service-1-heading mb-3"><a href="{% url 'contact' }">Bespoke nutritional plans</a></h3>
+            <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
+                <div class="block-service-1-card">
+                    <a href="#" class="thumbnail-link d-block mb-4"><img src="{% static 'mainsite/images/img_1.jpg' %}" alt="Person recieving Swedish Massage" class="img-fluid"></a>
+                    <h3 class="block-service-1-heading mb-3"><a href="{% url 'contact' %}">Relaxation Therapies</a></h3>
+                    <div class="block-service-1-excerpt">
+                        <p>Swedish massage using hand blended essential oils formulations to help with circulation, recovery and the
+                            stresses of everyday life. We also off wet/dry cupping; An ancient practice used throughout the ages not
+                            only in Asia but also in Eastern Europe, the Middle East, and Latin America.</p>
+                    </div>
+                    <p><a href="{% url 'prices' %}" class="d-inline-flex align-items-center block-service-1-more"><span>Find out
+                                more</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
+                </div>
+            </div>
+            <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
+                <div class="block-service-1-card">
+                    <a href="#" class="thumbnail-link d-block mb-4"><img src="{% static 'mainsite/images/nutritionist.jpg' %}" alt="Person recieving nutrition advice" class="img-fluid"></a>
+                    <h3 class="block-service-1-heading mb-3"><a href="{% url 'contact' }">Bespoke nutritional plans</a></h3>
               <div class="block-service-1-excerpt"><p>Speak to one of our resident nutritionists who will design you a personlised nutrition plan to maximise the results you wish to achieve. Whether its gaining muscle, losing weight, improving body composition or to even feel better in your mood and energy levels.</p></div>
-              <p><a href="{% url 'prices' %}" class="d-inline-flex align-items-center block-service-1-more"><span>Find out more</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
+              <p><a href="{% url 'prices' %}" class="d-inline-flex align-items-center block-service-1-more"><span>Find
+                                out more</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
+</div>
 
-    <div class="block-half-content-1 d-block d-lg-flex mt-5">
-      <div class="block-half-content-img" style="background-image: url({% static 'mainsite/images/towels.jpg' %});">
-        
-      </div>
-      <div class="block-half-content-text bg-primary">
+<div class="block-half-content-1 d-block d-lg-flex mt-5">
+    <div class="block-half-content-img" style="background-image: url({% static 'mainsite/images/towels.jpg' %});">
+
+    </div>
+    <div class="block-half-content-text bg-primary">
         <div class="block-half-content-text-inner">
-          <h2 class="block-half-content-heading mb-4">Why Choose Us</h2>
-          <div class="block-half-content-excerpt">
-          <p class="lead">Our small and friendly team of professionals each have their own specialisms and accreditations within the industry, so rest assured you are in the right hands when choosing us for your therapeutic needs.</p>
-          </div>
+            <h2 class="block-half-content-heading mb-4">Why Choose Us</h2>
+            <div class="block-half-content-excerpt">
+                <p class="lead">Our small and friendly team of professionals each have their own specialisms and accreditations
+                    within the industry, so rest assured you are in the right hands when choosing us for your therapeutic needs.
+                </p>
+            </div>
         </div>
 
         <div class="block-counter-1 section-counter">
-          <div class="row">
-            <div class="col-sm-4">
-              <div class="counter">
-                <div class="number-wrap">
-                  <span class="block-counter-1-number" data-number="6">0</span><span class="append">K+</span>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="counter">
+                        <div class="number-wrap">
+                            <span class="block-counter-1-number" data-number="6">0</span><span class="append">K+</span>
+                        </div>
+                        <span class="block-counter-1-caption">Treatments administered</span>
+                    </div>
                 </div>
-                <span class="block-counter-1-caption">Treatments administered</span>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="counter">
-                <div class="number-wrap">
-                  <span class="block-counter-1-number" data-number="4">0</span><span class="append
+                <div class="col-sm-4">
+                    <div class="counter">
+                        <div class="number-wrap">
+                            <span class="block-counter-1-number" data-number="4">0</span><span class="append
 "></span>
+                        </div>
+                        <span class="block-counter-1-caption">Years of Trading</span>
+                    </div>
                 </div>
-                <span class="block-counter-1-caption">Years of Trading</span>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="counter">
-                <div class="number-wrap">
-                  <span class="block-counter-1-number" data-number="98">0</span><span class="append">%</span>
+                <div class="col-sm-4">
+                    <div class="counter">
+                        <div class="number-wrap">
+                            <span class="block-counter-1-number" data-number="98">0</span><span class="append">%</span>
+                        </div>
+                        <span class="block-counter-1-caption">Repeated custom</span>
+                    </div>
                 </div>
-                <span class="block-counter-1-caption">Repeated custom</span>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
+</div>
 
 
 {% endblock %}
