@@ -14,7 +14,8 @@ class WebPagesTestCase(TestCase):
     def test_aboutpage(self):
         response = self.client.get('/about.html/')
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, "mainsite/about.html")
+        self.assertTemplateUsed(response,
+                                "mainsite/about.html")
         self.assertTemplateUsed(response, "base.html")
 
     def test_pricespage(self):
@@ -26,7 +27,8 @@ class WebPagesTestCase(TestCase):
     def test_successpage(self):
         response = self.client.get('/successful_submission.html/')
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, "mainsite/successful_submission.html")
+        self.assertTemplateUsed(response,
+                                "mainsite/successful_submission.html")
         self.assertTemplateUsed(response, "base.html")
 
     def test_contactpage(self):

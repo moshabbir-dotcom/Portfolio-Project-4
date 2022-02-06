@@ -29,8 +29,8 @@ The aim is to build a website where only registered users may access the booking
 * I want to be able to view, amend or delete an appointment.
 
 ### Planning
-* The project was planned using Github's project planning function. 
-<!-- INSERT PICTURE OR LINK WHEN COMPLETED -->
+* The project was planned using Github's project planning function and can be found [HERE](https://github.com/moshabbir-dotcom/Portfolio-Project-4/projects/1)
+<img src="media/images/ProjectPlan.png">
 
 ## Wireframe
 * The basic wireframe design was put together with the client with a few preference as to how the site was visualised and on discussion it was possible to identify a few points to work towards with an element of flexibility around vsualsto be reviewed at the end of every sprint. 
@@ -123,7 +123,7 @@ However slightly adjusting the colour contrast by amending the css stylesheet al
 <!-- FINISH THIS -->
 ## Code validation & Testing
 ### Testing
-* The TestCase module imported from Django.test was used to test 
+* The TestCase module imported from Django.test was used to test each page load and redirect. 
 
 ### HTML
 <!-- CODE TEST RESULT TO GO HERE -->
@@ -132,7 +132,28 @@ However slightly adjusting the colour contrast by amending the css stylesheet al
 ### JavaScript
 <!-- CODE TEST RESULT TO GO HERE -->
 ### Python
-<!-- CODE TEST RESULT TO GO HERE -->
+* All Python code was tested through a PEP8 validator and passed even though the pylint module in some occasions reported errors. The evidence of validation is below:
+* Admin.py
+<img src="media/images/Admin.png">
+
+* Forms.py
+<img src="media/images/Forms.png">
+
+* Models.py
+<img src="media/images/Models.png">
+
+* Settings.py
+<img src="media/images/Settings.png">
+
+* Tests.py
+<img src="media/images/Tests.png">
+
+* Urls.py
+<img src="media/images/Urls.png">
+
+* Views.py
+<img src="media/images/Views.png">
+
 ## Rendering on different screen sizes
 ### Desktop
 

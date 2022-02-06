@@ -30,7 +30,8 @@ def successful_submission(request):
 @login_required
 def manage_booking(request):
     bookings = Booking.objects.filter(user=request.user)
-    return render(request, 'mainsite/manage_booking.html', {"bookings":bookings})
+    return render(request, 'mainsite/manage_booking.html',
+                  {"bookings": bookings})
 
 # View for contact form page
 
