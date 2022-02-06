@@ -173,11 +173,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # https://accounts.google.com/DisplayUnlockCaptcha
 # myaccount.google.com/apppasswords
 # Email settings to be updated when going live
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_PORT = os.environ.get('EMAIL_PORT')
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-EMAIL_USE_TLS = True
+EMAIL_USE_TLS = bool(os.environ.get('EMAIL_USE_TLS'))
 
 # Django email backend for form testing go to
 # (http://127.0.0.1:8000/**PAGE-NAME**)

@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from .models import Booking
 from .forms import MessageForm, BookingForm
 from django.contrib.auth.decorators import login_required
+from django.template.loader import get_template
 import os
 
 # Create your views here.
@@ -52,9 +53,9 @@ def contact(request):
                 'lname': form.cleaned_data['lname'],
                 'email': form.cleaned_data['email'],
                 'pnumber': form.cleaned_data['pnumber'],
-                'message': form.cleaned_data['fname'],
+                'message': form.cleaned_data['message'],
             }
-            message = "\n".join(body.values())
+            message = get_template("mainsite/contact_email.html").render(body)
 
             try:
                 send_mail(subject, message, form.cleaned_data['email'],
@@ -88,11 +89,11 @@ def make_booking(request):
                 'time': form.cleaned_data['time'],
                 'addinfo': form.cleaned_data['addinfo'],
             }
-            message = "\n".join(body.values())
+            message = get_template("mainsite/booking_email.html").render(body)
 
             try:
-                send_mail(subject, message, form.cleaned_data['email'],
-                          [os.environ["CONTACT_EMAIL"]])
+                send_mail(subject, message, os.environ["CONTACT_EMAIL"],
+                          [os.environ["CONTACT_EMAIL"], form.cleaned_data['email']])
             except BadHeaderError:
                 return HttpResponse('Invalid Header Found')
             return render(request, 'mainsite/successful_submission.html')
@@ -121,7 +122,7 @@ def edit_booking(request, id):
         form = BookingForm(request.POST, instance=booking)
         if form.is_valid():
             form.save()
-            subject = "JA Therapies Booking Request"
+            subject = "JA Therapies Updated Booking Request"
             body = {
                 'fname': form.cleaned_data['fname'],
                 'lname': form.cleaned_data['lname'],
@@ -131,7 +132,7 @@ def edit_booking(request, id):
                 'time': form.cleaned_data['time'],
                 'addinfo': form.cleaned_data['addinfo'],
             }
-            message = "\n".join(body.values())
+            message = get_template("mainsite/booking_email.html").render(body)
 
             try:
                 send_mail(subject, message, os.environ["CONTACT_EMAIL"],
