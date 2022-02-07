@@ -28,7 +28,7 @@ Twickenham{% endblock %}
             <div class="col-md-7 mb-5" data-aos="fade">
 
 
-                <form action="{% url 'contact' %}" method="POST" class="p-5 bg-white" style="margin-top: -150px;">
+                <form action="{% url 'contact' %}" method="POST" class="p-5 bg-white format-form" style="margin-top: -150px;">
                     {% csrf_token %}
                     {{form.as_p}}
                     <input type="submit" value="Send Message" class="btn btn-pill btn-primary btn-md text-white">
