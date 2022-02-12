@@ -25,7 +25,7 @@ The aim is to build a website where only registered users may access the booking
 * I want to be able to book an appointment.
 * I will be able to find out about the company and the level of skill of staff.
 * I will be able to message the company with a contact request.
-<!-- * I want to get a confirmation email with my appointment time. -->
+* I want to get a confirmation email with my appointment time. (Not live email, need to run <em>python -m smtpd -n -c DebuggingServer localhost:1025 in the terminal to test functionality for marking.</em>)
 * I want to be able to view, amend or delete an appointment.
 
 ### Planning
