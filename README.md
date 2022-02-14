@@ -24,9 +24,10 @@ The aim is to build a website where only registered users may access the booking
 * I will know what kind of services the practice offers.
 * I want to be able to book an appointment.
 * I will be able to find out about the company and the level of skill of staff.
-* I will be able to message the company with a contact request.
+* I will be able to message the company with a contact request. (Not live email, need to run <em>python -m smtpd -n -c DebuggingServer localhost:1025 in a new terminal while port 8000 is running to test functionality for marking.</em>)
+Click [HERE](https://github.com/moshabbir-dotcom/Portfolio-Project-4/blob/7e0d5ed0f4a822b7f199c2e371234cfe7de6753f/static/mainsite/images/Port1025contact.png) for evidence of terminal output.
 * I want to get a confirmation email with my appointment time. (Not live email, need to run <em>python -m smtpd -n -c DebuggingServer localhost:1025 in a new terminal while port 8000 is running to test functionality for marking.</em>)
-Click [HERE]() for evidence of terminal output.
+Click [HERE](https://github.com/moshabbir-dotcom/Portfolio-Project-4/blob/7e0d5ed0f4a822b7f199c2e371234cfe7de6753f/static/mainsite/images/Port1025.png) for evidence of terminal output.
 * I want to be able to view, amend or delete an appointment.
 
 ### Planning
@@ -93,6 +94,9 @@ However slightly adjusting the colour contrast by amending the css stylesheet al
 * [a11y](https://color.a11y.com/Contrast/)
 * [TinyPNG](https://tinypng.com/)
 * [Cloudinary](https://cloudinary.com/)
+* [ES6 Syntax Checker](https://www.piliapp.com/syntax-check/es6/)
+* [W3C CSS Checker](https://jigsaw.w3.org/css-validator/)
+* [W3C HTML Checker]()
 
 ## Features
 ### Navigation
@@ -118,11 +122,11 @@ However slightly adjusting the colour contrast by amending the css stylesheet al
 
 ### Contact
 * This is a page that was set to only be viewed when the user is logged in and was set using the allauth decorator of "login_required" in the views.py file to ensure that it coulds not be accessed by writing the url directly in the address bar. The links for this page across the website were embedded in "if" statements where the links to this page would only be visible in the event the user was authenticated. Otherwise the user would be directed to the signup page to first make an account.
-As the email settings were causing a "port not found error" when attempting to submit a contact request; I believe from doing research online that this may be caused by firewall/security settings for the learning provider so a dubug server has been used to prove functionality for which the output is evidenced [HERE]().
+As the email settings were causing a "port not found error" when attempting to submit a contact request; I believe from doing research online that this may be caused by firewall/security settings for the learning provider so a dubug server has been used to prove functionality for which the output is evidenced [HERE](https://github.com/moshabbir-dotcom/Portfolio-Project-4/blob/7e0d5ed0f4a822b7f199c2e371234cfe7de6753f/static/mainsite/images/Port1025contact.png) and in the user story section.
 
 ### Booking
 * This is a page that was set to only be viewed when the user is logged in and was set using the allauth decorator of "login_required" in the views.py file to ensure that it coulds not be accessed by writing the url directly in the address bar.The links for this page were as the homepage in that across the website they were embedded in "if" statements where the links to this page would only be visible in the event the user was authenticated. Otherwise the user would be directed to the signup page to first make an account.
-As the email settings were causing a "port not found error" when attempting to make a booking; I believe from doing research online that this may be caused by firewall/security settings for the learning provider so a dubug server has been used to prove functionality for which the output is evidenced in the user story section and [HERE]().
+As the email settings were causing a "port not found error" when attempting to make a booking; I believe from doing research online that this may be caused by firewall/security settings for the learning provider so a dubug server has been used to prove functionality for which the output is evidenced in the user story section and [HERE](https://github.com/moshabbir-dotcom/Portfolio-Project-4/blob/7e0d5ed0f4a822b7f199c2e371234cfe7de6753f/static/mainsite/images/Port1025.png).
 
 ## Code validation & Testing
 ### Testing
@@ -131,9 +135,9 @@ As the email settings were causing a "port not found error" when attempting to m
 ### HTML
 <!-- CODE TEST RESULT TO GO HERE -->
 ### CSS
-<!-- CODE TEST RESULT TO GO HERE -->
+* The bulk of the CSS was from the bootstrap template itself however custom code was written in order to fulfill marking criteria and passed validation which is evidenced [HERE]().
 ### JavaScript
-<!-- CODE TEST RESULT TO GO HERE -->
+* The bulk of the Javascript was from the bootstrap template itself however custom code was written in order to improve the UX on the navigation menu when exploring the site and passed validation which is evidenced [HERE]().
 ### Python
 * All Python code was tested through a PEP8 validator and passed even though the pylint module in some occasions reported errors. The evidence of validation is below:
 * [Admin.py](https://github.com/moshabbir-dotcom/Portfolio-Project-4/blob/39853abb1ee53aea7edad976d9eb1e1274e60a7f/media/images/Admin.png)
