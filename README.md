@@ -25,7 +25,8 @@ The aim is to build a website where only registered users may access the booking
 * I want to be able to book an appointment.
 * I will be able to find out about the company and the level of skill of staff.
 * I will be able to message the company with a contact request.
-* I want to get a confirmation email with my appointment time. (Not live email, need to run <em>python -m smtpd -n -c DebuggingServer localhost:1025 in the terminal to test functionality for marking.</em>)
+* I want to get a confirmation email with my appointment time. (Not live email, need to run <em>python -m smtpd -n -c DebuggingServer localhost:1025 in a new terminal while port 8000 is running to test functionality for marking.</em>)
+Click [HERE]() for evidence of terminal output.
 * I want to be able to view, amend or delete an appointment.
 
 ### Planning
@@ -117,12 +118,12 @@ However slightly adjusting the colour contrast by amending the css stylesheet al
 
 ### Contact
 * This is a page that was set to only be viewed when the user is logged in and was set using the allauth decorator of "login_required" in the views.py file to ensure that it coulds not be accessed by writing the url directly in the address bar. The links for this page across the website were embedded in "if" statements where the links to this page would only be visible in the event the user was authenticated. Otherwise the user would be directed to the signup page to first make an account.
-
-<!-- FINISH THIS -->
+As the email settings were causing a "port not found error" when attempting to submit a contact request; I believe from doing research online that this may be caused by firewall/security settings for the learning provider so a dubug server has been used to prove functionality for which the output is evidenced [HERE]().
 
 ### Booking
 * This is a page that was set to only be viewed when the user is logged in and was set using the allauth decorator of "login_required" in the views.py file to ensure that it coulds not be accessed by writing the url directly in the address bar.The links for this page were as the homepage in that across the website they were embedded in "if" statements where the links to this page would only be visible in the event the user was authenticated. Otherwise the user would be directed to the signup page to first make an account.
-<!-- FINISH THIS -->
+As the email settings were causing a "port not found error" when attempting to make a booking; I believe from doing research online that this may be caused by firewall/security settings for the learning provider so a dubug server has been used to prove functionality for which the output is evidenced in the user story section and [HERE]().
+
 ## Code validation & Testing
 ### Testing
 * The TestCase module imported from Django.test was used to test each page load and redirect. Whilst writing my test code I was informed by my new mentor that this was no longer an assessment criteria for Portfolio Project 4, so form testing was not done although would have been completed if it were.

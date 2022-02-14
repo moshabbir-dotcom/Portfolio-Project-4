@@ -12,11 +12,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-# import environ
 import sys
 import dj_database_url
 if os.path.isfile('env.py'):
-    import env
+    import env  # noqa: F401
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -169,16 +168,11 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# myaccount.google.com/lesssecureapps
-# https://accounts.google.com/DisplayUnlockCaptcha
-# myaccount.google.com/apppasswords
-# Email settings to be updated when going live
+# Email settings to be updated when going live in env.py
 EMAIL_HOST = os.environ.get('EMAIL_HOST')
 EMAIL_PORT = os.environ.get('EMAIL_PORT')
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = bool(os.environ.get('EMAIL_USE_TLS'))
 
-# Django email backend for form testing go to
-# (http://127.0.0.1:8000/**PAGE-NAME**)
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
