@@ -44,7 +44,7 @@
             <div class="site-mobile-menu-body"></div>
         </div>
 
-        <header class="site-navbar" role="banner">
+        <header class="site-navbar">
 
             <div class="container">
                 <div class="row align-items-center">
@@ -53,7 +53,7 @@
                         <h1 class="mb-0 site-logo"><a href="{% url 'home' %}" class="text-white mb-0"> JA Therapies<span class="text-primary">.</span> </a></h1>
                     </div>
                     <div class="col-12 col-md-8 d-none d-xl-block">
-                        <nav class="site-navigation position-relative text-right" role="navigation">
+                        <nav class="site-navigation position-relative text-right">
 
                             <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
                                 <li>
@@ -110,172 +110,171 @@
                 </div>
 
             </div>
-    </div>
 
-    </header>
+        </header>
 
-    {% block content %}
-    {% endblock %}
+        {% block content %}
+        {% endblock %}
 
-    <div class="site-section">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-md-12 text-center">
-                    <h2 class="site-section-heading text-center font-secondary">Testimonials</h2>
-                </div>
-            </div>
-            <div class="row">
-
-                <div class="col-12">
-
-                    <div class="owl-carousel-2 owl-carousel">
-
-                        <div class="d-block block-testimony mx-auto text-center">
-                            <div class="person w-25 mx-auto mb-4">
-                                <img src="{% static 'mainsite/images/person_1.jpg' %}" alt="Carly" class="img-fluid rounded-circle w-50 mx-auto">
-                            </div>
-                            <div>
-                                <h2 class="h5 mb-4">Carly</h2>
-                                <blockquote>&ldquo;My job can be extremley demanding & stressfull and I always make sure I book myself
-                                    in for a Swedish massage at least once a month to keep me feeling my best. The team also advise on
-                                    lifestyle changes to help overall wellbeing... Thanks guys!&rdquo;</blockquote>
-                            </div>
-                        </div>
-
-                        <div class="d-block block-testimony mx-auto text-center">
-                            <div class="person w-25 mx-auto mb-4">
-                                <img src="{% static 'mainsite/images/person_2.jpg' %}" alt="Image" class="img-fluid rounded-circle w-50 mx-auto">
-                            </div>
-                            <div>
-                                <h2 class="h5 mb-4">Dominic</h2>
-                                <blockquote>&ldquo;I regularly use JA Therapies for the sports massage treatment to aid with my recovery
-                                    after training. As a marathon runner I would definatley recommend the courteous and professional
-                                    service offered by the specialists. Great stuff!&rdquo;</blockquote>
-                            </div>
-                        </div>
-
-                        <div class="d-block block-testimony mx-auto text-center">
-                            <div class="person w-25 mx-auto mb-4">
-                                <img src="{% static 'mainsite/images/person_7.jpg' %}" alt="Image" class="img-fluid rounded-circle w-50 mx-auto">
-                            </div>
-                            <div>
-                                <h2 class="h5 mb-4">Rhiannon</h2>
-                                <blockquote>&ldquo;I suffered for years with allergic reactions to mainstream cosmetics and skin
-                                    treatments. After having an personalised consultation they were able to formulate serums for my skin
-                                    and hair that have worked wonders!&rdquo;</blockquote>
-                            </div>
-                        </div>
-
-                        <div class="d-block block-testimony mx-auto text-center">
-                            <div class="person w-25 mx-auto mb-4">
-                                <img src="{% static 'mainsite/images/person_4.jpg' %}" alt="Image" class="img-fluid rounded-circle w-50 mx-auto">
-                            </div>
-                            <div>
-                                <h2 class="h5 mb-4">Adam</h2>
-                                <blockquote>&ldquo;I had alway heard about cupping therapy but was always a little worried and
-                                    apprehensive about getting it done. The practitioner was very patient in making me feel at ease and
-                                    understanding the process before committing. I feel it has had major benefit on my knee pain and I
-                                    would not hesitate to use JA Therapies again!&rdquo;</blockquote>
-                            </div>
-                        </div>
-
-
+        <div class="site-section">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-md-12 text-center">
+                        <h2 class="site-section-heading text-center font-secondary">Testimonials</h2>
                     </div>
                 </div>
+                <div class="row">
+
+                    <div class="col-12">
+
+                        <div class="owl-carousel-2 owl-carousel">
+
+                            <div class="d-block block-testimony mx-auto text-center">
+                                <div class="person w-25 mx-auto mb-4">
+                                    <img src="{% static 'mainsite/images/person_1.jpg' %}" alt="Carly" class="img-fluid rounded-circle w-50 mx-auto">
+                                </div>
+                                <div>
+                                    <h2 class="h5 mb-4">Carly</h2>
+                                    <blockquote>&ldquo;My job can be extremley demanding & stressfull and I always make sure I book myself
+                                        in for a Swedish massage at least once a month to keep me feeling my best. The team also advise on
+                                        lifestyle changes to help overall wellbeing... Thanks guys!&rdquo;</blockquote>
+                                </div>
+                            </div>
+
+                            <div class="d-block block-testimony mx-auto text-center">
+                                <div class="person w-25 mx-auto mb-4">
+                                    <img src="{% static 'mainsite/images/person_2.jpg' %}" alt="Image" class="img-fluid rounded-circle w-50 mx-auto">
+                                </div>
+                                <div>
+                                    <h2 class="h5 mb-4">Dominic</h2>
+                                    <blockquote>&ldquo;I regularly use JA Therapies for the sports massage treatment to aid with my recovery
+                                        after training. As a marathon runner I would definatley recommend the courteous and professional
+                                        service offered by the specialists. Great stuff!&rdquo;</blockquote>
+                                </div>
+                            </div>
+
+                            <div class="d-block block-testimony mx-auto text-center">
+                                <div class="person w-25 mx-auto mb-4">
+                                    <img src="{% static 'mainsite/images/person_7.jpg' %}" alt="Image" class="img-fluid rounded-circle w-50 mx-auto">
+                                </div>
+                                <div>
+                                    <h2 class="h5 mb-4">Rhiannon</h2>
+                                    <blockquote>&ldquo;I suffered for years with allergic reactions to mainstream cosmetics and skin
+                                        treatments. After having an personalised consultation they were able to formulate serums for my skin
+                                        and hair that have worked wonders!&rdquo;</blockquote>
+                                </div>
+                            </div>
+
+                            <div class="d-block block-testimony mx-auto text-center">
+                                <div class="person w-25 mx-auto mb-4">
+                                    <img src="{% static 'mainsite/images/person_4.jpg' %}" alt="Image" class="img-fluid rounded-circle w-50 mx-auto">
+                                </div>
+                                <div>
+                                    <h2 class="h5 mb-4">Adam</h2>
+                                    <blockquote>&ldquo;I had alway heard about cupping therapy but was always a little worried and
+                                        apprehensive about getting it done. The practitioner was very patient in making me feel at ease and
+                                        understanding the process before committing. I feel it has had major benefit on my knee pain and I
+                                        would not hesitate to use JA Therapies again!&rdquo;</blockquote>
+                                </div>
+                            </div>
 
 
-            </div>
-        </div>
-    </div>
-
-    <div class="mt-5 block-cta-1 primary-overlay" style="background-image: url('/static/mainsite/images/hero_bg_2.jpg')">
-        <div class="container">
-            <div class="row align-items-center justify-content-between">
-
-                <div class="col-lg-7 mb-4 mb-lg-0">
-                    <h2 class="mb-3 mt-0 text-white">Up to 25% cashback on completion of <script>
-                            document.write(new Date().getFullYear());
-                        </script> block bookings!!</h2>
-                    <p class="mb-0 text-white lead">The more you book the more you save!</p>
-                </div>
-                <div class="col-lg-4">
-                    {% if user.is_authenticated %}
-                    <p class="mb-0"><a href="{% url 'manage_booking' %}" class="btn btn-outline-white text-white btn-md btn-pill px-5 font-weight-bold btn-block">Manage
-                            Booking</a></p>
-                    {% else %}
-                    <p class="mb-0"><a href="{% url 'account_login' %}" class="btn btn-outline-white text-white btn-md btn-pill px-5 font-weight-bold btn-block">Login</a></p>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer class="site-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-9">
-                    <div class="row">
-                        <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
-                            <h2 class="footer-heading mb-4">Quick Links</h2>
-                            <ul class="list-unstyled">
-                                <li><a href="{% url 'about' %}">About Us</a></li>
-                                <li><a href="{% url 'prices' %}">Treatments & Prices</a></li>
-                                {% if user.is_authenticated %}
-                                <li><a href="{% url 'manage_booking' %}">Booking</a></li>
-                                <li><a href="{% url 'contact' %}">Contact Us</a></li>
-                                {% else %}
-                                <li><a href="{% url 'account_signup' %}">Signup</a></li>
-                                <li><a href="{% url 'account_login' %}">Login</a></li>
-                                {% endif %}
-                            </ul>
-                        </div>
-                        <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
-                            <h2 class="footer-heading mb-4">Relax...</h2>
-                            <ul class="list-unstyled">
-                                <li><a href="{% url 'booking_form' %}">Swedish Massage</a></li>
-                                <li><a href="{% url 'booking_form' %}">Aromatherapy</a></li>
-                                <li><a href="{% url 'booking_form' %}">Wet Cupping</a></li>
-                                <li><a href="{% url 'booking_form' %}">Fire (dry) cupping</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
-                            <h2 class="footer-heading mb-4">Recover...</h2>
-                            <ul class="list-unstyled">
-                                <li><a href="{% url 'booking_form' %}">Physical Therapy</a></li>
-                                <li><a href="{% url 'booking_form' %}">Sports Massage Therapy</a></li>
-                                <li><a href="{% url 'booking_form' %}">Graston IATM</a></li>
-                                <li><a href="{% url 'booking_form' %}">Nutrition</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
-                            <h2 class="footer-heading mb-4">Follow Us...</h2>
-                            <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-                            <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-                            <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-                            <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3">
-                    <h2 class="footer-heading mb-4">Find Us...</h2>
-                    <p>Find us using Google Maps...</p>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2487.1312047676656!2d-0.3738394842654714!3d51.43738427962372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760cac46f2bd67%3A0xa7d6fa6e30ae3993!2s786%20Staines%20Rd%2C%20Twickenham%2C%20Feltham%20TW13%206HH!5e0!3m2!1sen!2suk!4v1643478830113!5m2!1sen!2suk" width="300" height="225" style="border:0; max-width: 100%;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-            </div>
-            <div class="row pt-5 mt-5">
-                <div class="col-12 text-md-center text-left">
-                    <p>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>
-                            document.write(new Date().getFullYear());
-                        </script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    </p>
+
+
                 </div>
             </div>
         </div>
-    </footer>
+
+        <div class="mt-5 block-cta-1 primary-overlay" style="background-image: url('/static/mainsite/images/hero_bg_2.jpg')">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+
+                    <div class="col-lg-7 mb-4 mb-lg-0">
+                        <h2 class="mb-3 mt-0 text-white">Up to 25% cashback on completion of <script>
+                                document.write(new Date().getFullYear());
+                            </script> block bookings!!</h2>
+                        <p class="mb-0 text-white lead">The more you book the more you save!</p>
+                    </div>
+                    <div class="col-lg-4">
+                        {% if user.is_authenticated %}
+                        <p class="mb-0"><a href="{% url 'manage_booking' %}" class="btn btn-outline-white text-white btn-md btn-pill px-5 font-weight-bold btn-block">Manage
+                                Booking</a></p>
+                        {% else %}
+                        <p class="mb-0"><a href="{% url 'account_login' %}" class="btn btn-outline-white text-white btn-md btn-pill px-5 font-weight-bold btn-block">Login</a></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
+                                <h2 class="footer-heading mb-4">Quick Links</h2>
+                                <ul class="list-unstyled">
+                                    <li><a href="{% url 'about' %}">About Us</a></li>
+                                    <li><a href="{% url 'prices' %}">Treatments & Prices</a></li>
+                                    {% if user.is_authenticated %}
+                                    <li><a href="{% url 'manage_booking' %}">Booking</a></li>
+                                    <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                                    {% else %}
+                                    <li><a href="{% url 'account_signup' %}">Signup</a></li>
+                                    <li><a href="{% url 'account_login' %}">Login</a></li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                            <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
+                                <h2 class="footer-heading mb-4">Relax...</h2>
+                                <ul class="list-unstyled">
+                                    <li><a href="{% url 'booking_form' %}">Swedish Massage</a></li>
+                                    <li><a href="{% url 'booking_form' %}">Aromatherapy</a></li>
+                                    <li><a href="{% url 'booking_form' %}">Wet Cupping</a></li>
+                                    <li><a href="{% url 'booking_form' %}">Fire (dry) cupping</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
+                                <h2 class="footer-heading mb-4">Recover...</h2>
+                                <ul class="list-unstyled">
+                                    <li><a href="{% url 'booking_form' %}">Physical Therapy</a></li>
+                                    <li><a href="{% url 'booking_form' %}">Sports Massage Therapy</a></li>
+                                    <li><a href="{% url 'booking_form' %}">Graston IATM</a></li>
+                                    <li><a href="{% url 'booking_form' %}">Nutrition</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
+                                <h2 class="footer-heading mb-4">Follow Us...</h2>
+                                <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                                <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+                                <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                                <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <h2 class="footer-heading mb-4">Find Us...</h2>
+                        <p>Find us using Google Maps...</p>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2487.1312047676656!2d-0.3738394842654714!3d51.43738427962372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760cac46f2bd67%3A0xa7d6fa6e30ae3993!2s786%20Staines%20Rd%2C%20Twickenham%2C%20Feltham%20TW13%206HH!5e0!3m2!1sen!2suk!4v1643478830113!5m2!1sen!2suk" width="300" height="225" style="border:0; max-width: 100%;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+                <div class="row pt-5 mt-5">
+                    <div class="col-12 text-md-center text-left">
+                        <p>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>
+                                document.write(new Date().getFullYear());
+                            </script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 
     <script src="{% static 'mainsite/js/jquery-3.3.1.min.js' %}"></script>

@@ -127,6 +127,7 @@ As the email settings were causing a "port not found error" when attempting to s
 ### Booking
 * This is a page that was set to only be viewed when the user is logged in and was set using the allauth decorator of "login_required" in the views.py file to ensure that it coulds not be accessed by writing the url directly in the address bar.The links for this page were as the homepage in that across the website they were embedded in "if" statements where the links to this page would only be visible in the event the user was authenticated. Otherwise the user would be directed to the signup page to first make an account.
 As the email settings were causing a "port not found error" when attempting to make a booking; I believe from doing research online that this may be caused by firewall/security settings for the learning provider so a dubug server has been used to prove functionality for which the output is evidenced in the user story section and [HERE](https://github.com/moshabbir-dotcom/Portfolio-Project-4/blob/7e0d5ed0f4a822b7f199c2e371234cfe7de6753f/static/mainsite/images/Port1025.png).
+There was a user story for client to be able to select the therapist they require but with the niche specialisms that the therapists offer customers would only have a very restricted choice in 1 or 2. As a result this was left as a "To Do" action to be added as part of an incremental function additon to the site once everyone is upskilled in multiple other areas. This was done to adhere to the principle of adding value to a development cycle in that this would not have provided an immediate benefit to the site user or owner and other tasks that would were prioritised.
 
 ## Code validation & Testing
 ### Testing
@@ -141,17 +142,11 @@ As the email settings were causing a "port not found error" when attempting to m
 ### Python
 * All Python code was tested through a PEP8 validator and passed even though the pylint module in some occasions reported errors. The evidence of validation is below:
 * [Admin.py](https://github.com/moshabbir-dotcom/Portfolio-Project-4/blob/39853abb1ee53aea7edad976d9eb1e1274e60a7f/media/images/Admin.png)
-
 * [Forms.py](https://github.com/moshabbir-dotcom/Portfolio-Project-4/blob/39853abb1ee53aea7edad976d9eb1e1274e60a7f/media/images/Forms.png)
-
 * [Models.py](https://github.com/moshabbir-dotcom/Portfolio-Project-4/blob/39853abb1ee53aea7edad976d9eb1e1274e60a7f/media/images/Models.png)
-
 * [Settings.py](https://github.com/moshabbir-dotcom/Portfolio-Project-4/blob/39853abb1ee53aea7edad976d9eb1e1274e60a7f/media/images/Settings.png)
-
 * [Tests.py](https://github.com/moshabbir-dotcom/Portfolio-Project-4/blob/39853abb1ee53aea7edad976d9eb1e1274e60a7f/media/images/Tests.png)
-
 * [Urls.py](https://github.com/moshabbir-dotcom/Portfolio-Project-4/blob/39853abb1ee53aea7edad976d9eb1e1274e60a7f/media/images/Urls.png)
-
 * [Views.py](https://github.com/moshabbir-dotcom/Portfolio-Project-4/blob/39853abb1ee53aea7edad976d9eb1e1274e60a7f/media/images/Views.png)
 
 ## Deployment & setting up Postgres DB
@@ -168,4 +163,9 @@ As the email settings were causing a "port not found error" when attempting to m
 The program is set to be deployed automatically after each push from gitpod.
 
 ### Credits
-## Django tutorial videos from Codemy.com 
+* Django tutorial videos from Codemy.com
+* Bim Williams, Daisy McGirr, Charlie Mallon & Matt Bodden who between them helped me with understanding areas I struggled to grasp.
+* Allauth templates were provided to me by Daisy as my initial ones caused button clicks to go to the wrong urls.
+* The bootstrap template came with CSS and JS files which were adapted however bespoke code that was written has been marked seperately in the ActiveNavLink.js file and at the bottom of the style.css file.
+* Business name and treatment offers belong to JA Therapies.
+* Lastly my new mentor Chris Quinn.
