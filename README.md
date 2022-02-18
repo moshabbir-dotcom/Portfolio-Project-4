@@ -134,11 +134,19 @@ There was a user story for client to be able to select the therapist they requir
 * The TestCase module imported from Django.test was used to test each page load and redirect. Whilst writing my test code I was informed by my new mentor that this was no longer an assessment criteria for Portfolio Project 4, so form testing was not done although would have been completed if it were.
 
 ### HTML
-<!-- CODE TEST RESULT TO GO HERE -->
+* All HTML pages were tested via URL input and passed validation before submission. Links to validation evidence is below.
+* [Home](https://github.com/moshabbir-dotcom/Portfolio-Project-4/blob/5e60e111a5041675f93b33352599d8254d0fefc0/media/images/HomePASShtml.png)
+* [About](https://github.com/moshabbir-dotcom/Portfolio-Project-4/blob/5e60e111a5041675f93b33352599d8254d0fefc0/media/images/AboutPASShtml.png)
+* [Prices](https://github.com/moshabbir-dotcom/Portfolio-Project-4/blob/5e60e111a5041675f93b33352599d8254d0fefc0/media/images/PricesPASShtml.png)
+* [Booking](https://github.com/moshabbir-dotcom/Portfolio-Project-4/blob/5e60e111a5041675f93b33352599d8254d0fefc0/media/images/BookingPASShtml.png)
+* [Contact](https://github.com/moshabbir-dotcom/Portfolio-Project-4/blob/5e60e111a5041675f93b33352599d8254d0fefc0/media/images/ContactPASShtml.png)
+* [Login](https://github.com/moshabbir-dotcom/Portfolio-Project-4/blob/5e60e111a5041675f93b33352599d8254d0fefc0/media/images/LoginPASShtml.png)
+* [Logout](https://github.com/moshabbir-dotcom/Portfolio-Project-4/blob/5e60e111a5041675f93b33352599d8254d0fefc0/media/images/LogoutPASShtml.png)
+* [Signup](https://github.com/moshabbir-dotcom/Portfolio-Project-4/blob/5e60e111a5041675f93b33352599d8254d0fefc0/media/images/SignupPASShtml.png)
 ### CSS
-* The bulk of the CSS was from the bootstrap template itself however custom code was written in order to fulfill marking criteria and passed validation which is evidenced [HERE]().
+* The bulk of the CSS was from the bootstrap template itself however custom code was written in order to fulfill marking criteria and passed validation which is evidenced [HERE](https://github.com/moshabbir-dotcom/Portfolio-Project-4/blob/5e60e111a5041675f93b33352599d8254d0fefc0/media/images/CSSValidation.png).
 ### JavaScript
-* The bulk of the Javascript was from the bootstrap template itself however custom code was written in order to improve the UX on the navigation menu when exploring the site and passed validation which is evidenced [HERE]().
+* The bulk of the Javascript was from the bootstrap template itself however custom code was written in order to improve the UX on the navigation menu when exploring the site and passed validation which is evidenced [HERE](https://github.com/moshabbir-dotcom/Portfolio-Project-4/blob/5e60e111a5041675f93b33352599d8254d0fefc0/media/images/JSValidation.png).
 ### Python
 * All Python code was tested through a PEP8 validator and passed even though the pylint module in some occasions reported errors. The evidence of validation is below:
 * [Admin.py](https://github.com/moshabbir-dotcom/Portfolio-Project-4/blob/39853abb1ee53aea7edad976d9eb1e1274e60a7f/media/images/Admin.png)
@@ -155,9 +163,9 @@ There was a user story for client to be able to select the therapist they requir
 * Under resources add database to the app resources by selecting Herku Postgres and adding it to env.py in the follwing steps
 * Select settings and go to config vars and then reveal config vars
 * Set the secret key and database url in heroku config vars and env.py and finalise the connection in settings to ensure sensitive data is not visible in the settings.py file
-* Deploy to Heroku by selecting Github as the method and connecting vis the prompt
-* Click into the search box tyoe project name and then connect
-* Click deploy branch.
+* Deploy to Heroku by selecting Github as the method and connecting via the prompt
+* Click into the search box type project name and then connect
+* Click deploy branch. (Before final deployment staticfiles were collected via CLI and debug set to "False" in settings.py file.)
 * Once complete the view button will allow the app to be shown in a browser
 
 The program is set to be deployed automatically after each push from gitpod.
