@@ -163,6 +163,9 @@ There was a user story for client to be able to select the therapist they requir
 * Another bug was when using the allauth templates in that the pre provided templates were redirecting on click to the wrong urls. As a result the templates were deleted from the workspace and reobtained. The were then set within the correct file structure and then worked subsequently.
 * When attempting to test the email functionality the website was crashing which was due to the external website not being configured to the website. In order to allow this functionality to work for marking it is required  run <em>python -m smtpd -n -c DebuggingServer localhost:1025 in a new terminal while port 8000 is running to test functionality. This will be configured to work with the site owners email on the non graded production site.
 * On deployment there was an issue encountered in that the static pages were pulling through to heroku from cloudinary but the animated slide show for the testemonials would not show on the deployed site. When inspecting in the devtools console it was visible that script was running in the background however there was 5 primary 404 errors resulting in this issue. This was caused by the files stored on cloudinary having the auto added suffix on files DIFFERENT to the files that the browser was looking for. In order to resolve this Whitenoise was used to host the static files with images stored on cloudinary.
+* After the final deployment there was a security warning recieved from Gitpod dependabot showing 11 security vulnerabilities (1 critical, 6 high, 4 moderate). This was due to patches being released after version 3.2 which I was using. This was resolved by upgrading Django 3.2 to Django 3.2.12.
+[BEFORE]()
+[AFTER]()
 
 ## Deployment & setting up Postgres DB
 * On the home screen click on create new app
