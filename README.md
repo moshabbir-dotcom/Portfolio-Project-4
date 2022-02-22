@@ -96,7 +96,8 @@ However slightly adjusting the colour contrast by amending the css stylesheet al
 * [Cloudinary](https://cloudinary.com/)
 * [ES6 Syntax Checker](https://www.piliapp.com/syntax-check/es6/)
 * [W3C CSS Checker](https://jigsaw.w3.org/css-validator/)
-* [W3C HTML Checker]()
+* [W3C HTML Checker](https://validator.w3.org/)
+* [WhiteNoise](http://whitenoise.evans.io/en/stable/)
 
 ## Features
 ### Navigation
@@ -157,6 +158,12 @@ There was a user story for client to be able to select the therapist they requir
 * [Urls.py](https://github.com/moshabbir-dotcom/Portfolio-Project-4/blob/39853abb1ee53aea7edad976d9eb1e1274e60a7f/media/images/Urls.png)
 * [Views.py](https://github.com/moshabbir-dotcom/Portfolio-Project-4/blob/39853abb1ee53aea7edad976d9eb1e1274e60a7f/media/images/Views.png)
 
+### Bugs
+* An early development bug encountered whilst completing this project was when initially putting together and migrating models to the PostgreSQL database in that I was attempting to make another "user" model which was not required as there is a default user model within Django which sufficed for this project. It was this default model which was then referred to with a foreign key allowing the relationship between the and the contact & booking models used on the site.
+* Another bug was when using the allauth templates in that the pre provided templates were redirecting on click to the wrong urls. As a result the templates were deleted from the workspace and reobtained. The were then set within the correct file structure and then worked subsequently.
+* When attempting to test the email functionality the website was crashing which was due to the external website not being configured to the website. In order to allow this functionality to work for marking it is required  run <em>python -m smtpd -n -c DebuggingServer localhost:1025 in a new terminal while port 8000 is running to test functionality. This will be configured to work with the site owners email on the non graded production site.
+* On deployment there was an issue encountered in that the static pages were pulling through to heroku from cloudinary but the animated slide show for the testemonials would not show on the deployed site. When inspecting in the devtools console it was visible that script was running in the background however there was 5 primary 404 errors resulting in this issue. This was caused by the files stored on cloudinary having the auto added suffix on files DIFFERENT to the files that the browser was looking for. In order to resolve this Whitenoise was used to host the static files with images stored on cloudinary.
+
 ## Deployment & setting up Postgres DB
 * On the home screen click on create new app
 * Enter project name & select region
@@ -168,12 +175,12 @@ There was a user story for client to be able to select the therapist they requir
 * Click deploy branch. (Before final deployment staticfiles were collected via CLI and debug set to "False" in settings.py file.)
 * Once complete the view button will allow the app to be shown in a browser
 
-The program is set to be deployed automatically after each push from gitpod.
+The program is set to be deployed automatically manually after each push from gitpod as this ensures the website is running before a deployment with minor changes could potentially create an issue.
 
 ### Credits
 * Django tutorial videos from Codemy.com
 * Bim Williams, Daisy McGirr, Charlie Mallon & Matt Bodden who between them helped me with understanding areas I struggled to grasp.
-* Allauth templates were provided to me by Daisy as my initial ones caused button clicks to go to the wrong urls.
+* Allauth templates were provided to me by Daisy as my initial ones caused button clicks to go to the wrong urls. She also provided me with the code that allowed DEBUG to be true in development and advice on having static files accessed from different sources depending on whether in DEVELOPMENT or not.
 * The bootstrap template came with CSS and JS files which were adapted however bespoke code that was written has been marked seperately in the ActiveNavLink.js file and at the bottom of the style.css file.
 * Business name and treatment offers belong to JA Therapies.
-* Lastly my new mentor Chris Quinn.
+* Lastly my new mentor Chris Quinn who sent me the documentation for white noise.
