@@ -59,7 +59,7 @@ def contact(request):
 
             try:
                 send_mail(subject, message, form.cleaned_data['email'],
-                          [os.environ["CONTACT_EMAIL"]])
+                          [os.environ["EMAIL_HOST_USER"]])
             except BadHeaderError:
                 return HttpResponse('Invalid Header Found')
             return render(request, 'mainsite/successful_submission.html')
