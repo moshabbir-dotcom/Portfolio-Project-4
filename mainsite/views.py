@@ -92,8 +92,8 @@ def make_booking(request):
             message = get_template("mainsite/booking_email.html").render(body)
 
             try:
-                send_mail(subject, message, os.environ["CONTACT_EMAIL"],
-                          [os.environ["CONTACT_EMAIL"], form.cleaned_data['email']])
+                send_mail(subject, message, os.environ["EMAIL_HOST_USER"],
+                          [os.environ["EMAIL_HOST_USER"], form.cleaned_data['email']])
             except BadHeaderError:
                 return HttpResponse('Invalid Header Found')
             return render(request, 'mainsite/successful_submission.html')
@@ -135,7 +135,7 @@ def edit_booking(request, id):
             message = get_template("mainsite/booking_email.html").render(body)
 
             try:
-                send_mail(subject, message, os.environ["CONTACT_EMAIL"],
+                send_mail(subject, message, os.environ["EMAIL_HOST_USER"],
                           ['email'])
             except BadHeaderError:
                 return HttpResponse('Invalid Header Found')
