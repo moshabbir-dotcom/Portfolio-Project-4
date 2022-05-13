@@ -891,6 +891,7 @@ h5,
 
 .site-blocks-cover.overlay {
     position: relative;
+    height: 50vh;
 }
 
 .site-blocks-cover.overlay:before {
